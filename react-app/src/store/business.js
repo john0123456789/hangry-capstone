@@ -1,5 +1,6 @@
 const GET_ALL_BUSINESSES = "businesses/GET_ALL_BUSINESSES";
 const CREATE_BUSINESS = "businesses/CREATE_BUSINESS";
+const DELETE_BUSINESS = "businesses/DELETE_BUSINESS";
 
 const getAllBusinesses = (businesses) => ({
     type: GET_ALL_BUSINESSES,
@@ -11,13 +12,16 @@ const createBusiness = (business) => ({
     business
 })
 
+const deleteBusiness = (business) => ({
+    type: DELETE_BUSINESS,
+    business
+})
+
 export const getAllBusinessesThunk = () => async (dispatch) => {
     const response = await fetch("/api/businesses");
-
-    if (response.ok) {
-        const businesses = await response.json();
-        dispatch(getAllBusinesses(businesses.businesses))
-    }
+        const data = await response.json();
+        dispatch(getAllBusinesses(data.businesses))
+        return data.businesses
 }
 
 export const createBusinessThunk = (newBusiness) => async (dispatch) => {
@@ -33,6 +37,17 @@ export const createBusinessThunk = (newBusiness) => async (dispatch) => {
         return business;
     }
 };
+
+export const deleteBusinessThunk = (business, id) => async (dispatch) => {
+    const response = await fetch(`/api/businesses/${id}`, {
+        method: "DELETE",
+    })
+    if (response.ok) {
+        const businessId = await response.json(business)
+        dispatch(deleteBusiness(businessId))
+        return businessId;
+    }
+}
 
 const initialState = {};
 
@@ -52,6 +67,9 @@ const businessesReducer = (state = initialState, action) => {
                 }
             }
             return newState;
+        case DELETE_BUSINESS:
+            delete newState[action.business.id]
+            return newState
         default:
             return state;
     }

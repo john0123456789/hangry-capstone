@@ -1,4 +1,4 @@
-import { getAllBusinessesThunk } from "../../store/business";
+import { deleteBusinessThunk, getAllBusinessesThunk } from "../../store/business";
 import { useDispatch, useSelector} from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useEffect } from "react";
@@ -14,6 +14,18 @@ useEffect(() => {
     dispatch(getAllBusinessesThunk());
 }, [dispatch]);
 
+const deleteBusinessClick = async (e) => {
+    e.preventDefault();
+    const buttonData = Number(e.target.id);
+    for (const business of businesses) {
+        if (business.id === buttonData) {
+            dispatch(deleteBusinessThunk(business, buttonData))
+            await dispatch (getAllBusinessesThunk())
+            history.push("/businesses")
+        }
+    }
+}
+
 return (
     <>
     <div>
@@ -26,6 +38,7 @@ return (
                 <h2>{business.phone_number}</h2>
                 <h2>{business.website}</h2>
                 <img alt="business_images" src={business.business_images.url}></img>
+                <button type="button" id={business.id} onClick={deleteBusinessClick}>Delete</button>
                 </div>
             )
         })}
