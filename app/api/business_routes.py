@@ -12,7 +12,7 @@ def get_business():
     businesses = Business.query.all()
     return {"businesses": [business.to_dict() for business in businesses]}
 
-# CREATE BUSINESS ROUTE
+#CREATE BUSINESS ROUTE
 @business_routes.route("/create", methods=['POST'])
 @login_required
 def create_business():
@@ -32,5 +32,15 @@ def create_business():
         )
 
     db.session.add(business)
+    db.session.commit()
+    return business.to_dict()
+
+#DELETE BUSINESS ROUTE
+@business_routes.route('/<int:id>', methods=["DELETE"])
+@login_required
+def delete_business(id):
+    business = Business.query.get(id)
+
+    db.session.delete(business)
     db.session.commit()
     return business.to_dict()
