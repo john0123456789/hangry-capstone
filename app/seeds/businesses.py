@@ -258,6 +258,6 @@ def seed_businesses():
     db.session.commit()
 
 
-def undo_business():
+def undo_businesses():
     db.session.execute("TRUNCATE businesses RESTART IDENTITY CASCADE;")
     db.session.commit()
