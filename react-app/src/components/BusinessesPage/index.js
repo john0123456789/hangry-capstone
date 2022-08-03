@@ -25,6 +25,7 @@ return (
                 <h2>Address:{business.address}, {business.city}, {business.state} {business.zipcode}</h2>
                 <h2>{business.phone_number}</h2>
                 <h2>{business.website}</h2>
+                <img alt="business_images" src={business.business_images.url}></img>
                 </div>
             )
         })}

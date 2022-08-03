@@ -9,6 +9,7 @@ import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
 import BusinessesPage from './components/BusinessesPage';
+import CreateBusinessPage from './components/CreateBusinessPage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -29,14 +30,17 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Switch>
+        <Route path='/businesses' exact={true}>
+          <BusinessesPage/>
+        </Route>
+        <Route path='/businesses/create' exact={true}>
+          <CreateBusinessPage/>
+        </Route>
         <Route path='/login' exact={true}>
           <LoginForm />
         </Route>
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
-        </Route>
-        <Route path='/businesses'>
-          <BusinessesPage/>
         </Route>
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
