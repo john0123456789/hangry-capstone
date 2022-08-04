@@ -1,4 +1,4 @@
-import { updateBusinessThunk } from "../../store/business";
+import { updateBusinessThunk, getAllBusinessesThunk } from "../../store/business";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { useState } from "react";
@@ -36,6 +36,7 @@ function EditBusinessPage() {
         }
 
         dispatch(updateBusinessThunk(updateBusiness, id));
+        dispatch(getAllBusinessesThunk())
         history.push("/businesses");
     }
 
