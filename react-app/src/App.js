@@ -11,6 +11,7 @@ import { authenticate } from './store/session';
 import BusinessesPage from './components/BusinessesPage';
 import CreateBusinessPage from './components/CreateBusinessPage';
 import EditBusinessPage from './components/EditBusinessPage';
+import ReviewsPage from './components/ReviewsPage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -39,6 +40,9 @@ function App() {
         </Route>
         <Route path='/businesses/:id'>
           <EditBusinessPage/>
+        </Route>
+        <Route path='/reviews'>
+          <ReviewsPage/>
         </Route>
         <Route path='/login' exact={true}>
           <LoginForm />
