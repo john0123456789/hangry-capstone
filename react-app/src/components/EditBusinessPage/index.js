@@ -17,7 +17,6 @@ function EditBusinessPage() {
     const [zipcode, setZipcode] = useState(singleBusiness.zipcode);
     const [city, setCity] = useState(singleBusiness.city);
     const [state, setState] = useState(singleBusiness.state);
-    const [country, setCountry] = useState(singleBusiness.country);
     const [phone_number, setPhoneNumber] = useState(singleBusiness.phone_number);
     const [website, setWebsite] = useState(singleBusiness.website);
 
@@ -30,7 +29,6 @@ function EditBusinessPage() {
             zipcode,
             city,
             state,
-            country,
             phone_number,
             website
         }
@@ -106,7 +104,6 @@ function EditBusinessPage() {
               <option value="WI">Wisconsin</option>
               <option value="WY">Wyoming</option>
             </select>
-            <input type="text" placeholder="Country" value={country} onChange={(e) => setCountry(e.target.value)}/>
             <input type="text" placeholder="Phone Number i.e. 1234567891" value={phone_number} onChange={(e) => setPhoneNumber(e.target.value)}/>
             <input type="text" placeholder="Website URL i.e. https://abc.com" value={website} onChange={(e) => setWebsite(e.target.value)}/>
             <button type="submit" onClick={handleBusinessUpdate}>Save Changes</button>
