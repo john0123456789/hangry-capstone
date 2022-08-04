@@ -1,6 +1,6 @@
 from flask import Blueprint, request
 from flask_login import login_required
-from app.models import db, Business, Image
+from app.models import db, Business
 from app.forms.business_form import BusinessForm
 
 business_routes = Blueprint("businesses", __name__)
@@ -32,6 +32,24 @@ def create_business():
         )
 
     db.session.add(business)
+    db.session.commit()
+    return business.to_dict()
+
+#UPDATE BUSINESS ROUTE
+@business_routes.route('/<int:id>', methods=["PUT"])
+@login_required
+def update_business(id):
+    business = Business.query.get(id)
+    data = request.json
+    business.name = data['name']
+    business.address = data['address']
+    business.zipcode = data['zipcode']
+    business.city = data['city']
+    business.state = data['state']
+    business.country = data['country']
+    business.phone_number = data['phone_number']
+    business.website = data['website']
+
     db.session.commit()
     return business.to_dict()
 
