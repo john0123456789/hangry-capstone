@@ -52,6 +52,7 @@ function CreateBusinessPage() {
             <input type="text" placeholder="Zipcode i.e. 12345" value={zipcode} onChange={(e) => setZipcode(e.target.value)}/>
             <input type="text" placeholder="City" value={city} onChange={(e) => setCity(e.target.value)}/>
             <select value={state} onChange={(e) => setState(e.target.value)}>
+              <option>Select State</option>
               <option value="AL">Alabama</option>
               <option value="AK">Alaska</option>
               <option value="AZ">Arizona</option>
