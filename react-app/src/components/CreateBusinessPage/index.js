@@ -14,7 +14,6 @@ function CreateBusinessPage() {
     const [zipcode, setZipcode] = useState("");
     const [city, setCity] = useState("");
     const [state, setState] = useState("");
-    const [country, setCountry] = useState("");
     const [phone_number, setPhoneNumber] = useState("");
     const [website, setWebsite] = useState("");
 
@@ -28,7 +27,6 @@ function CreateBusinessPage() {
             zipcode,
             city,
             state,
-            country,
             phone_number,
             website
         }
@@ -105,7 +103,6 @@ function CreateBusinessPage() {
               <option value="WI">Wisconsin</option>
               <option value="WY">Wyoming</option>
             </select>
-            <input type="text" placeholder="Country" value={country} onChange={(e) => setCountry(e.target.value)}/>
             <input type="text" placeholder="Phone Number i.e. 1234567891" value={phone_number} onChange={(e) => setPhoneNumber(e.target.value)}/>
             <input type="text" placeholder="Website URL i.e. https://abc.com" value={website} onChange={(e) => setWebsite(e.target.value)}/>
             <button type="submit" onClick={handleBusinessSubmit}>Add Business</button>
