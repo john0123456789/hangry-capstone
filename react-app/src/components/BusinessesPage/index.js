@@ -14,16 +14,21 @@ useEffect(() => {
     dispatch(getAllBusinessesThunk());
 }, [dispatch]);
 
-const deleteBusinessClick = async (e) => {
+const deleteBusinessClick = (e) => {
     e.preventDefault();
     const buttonData = Number(e.target.id);
     for (const business of businesses) {
         if (business.id === buttonData) {
             dispatch(deleteBusinessThunk(business, buttonData))
-            await dispatch (getAllBusinessesThunk())
             history.push("/businesses")
         }
     }
+}
+
+const editBusinessClick = (e) => {
+    e.preventDefault();
+    const buttonData = Number(e.target.id);
+    history.push(`/businesses/${buttonData}`)
 }
 
 return (
@@ -38,6 +43,7 @@ return (
                 <h2>{business.phone_number}</h2>
                 <h2>{business.website}</h2>
                 <img alt="business_images" src={business.business_images.url}></img>
+                <button type="button" id={business.id} onClick={editBusinessClick}>Edit</button>
                 <button type="button" id={business.id} onClick={deleteBusinessClick}>Delete</button>
                 </div>
             )
