@@ -1,4 +1,5 @@
 import { deleteBusinessThunk, getAllBusinessesThunk } from "../../store/business";
+import { clearReviews } from "../../store/review";
 import { useDispatch, useSelector} from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useEffect } from "react";
@@ -36,6 +37,17 @@ return (
     <div>
         <h1>BUSINESSES PAGE</h1>
         { businesses.map(business =>{
+            const getReviewClick = async (e) => {
+                e.preventDefault();
+                await dispatch(clearReviews());
+                const business_id = Number(e.target.id);
+                history.push(`/reviews/business/${business_id}`)
+            }
+            const addReviewClick = (e) => {
+                e.preventDefault();
+                const business_id = Number(e.target.id);
+                history.push(`/reviews/create/${business_id}`)
+            }
             return (
                 <div key={business.id}>
                 <h2>{business.name}</h2>
@@ -43,6 +55,8 @@ return (
                 <h2>{business.phone_number}</h2>
                 <h2>{business.website}</h2>
                 <img alt="business_images" src={business.business_images.url}></img>
+                <button type="button" id={business.id} onClick={getReviewClick}>Reviews</button>
+                <button type="button" id={business.id} onClick={addReviewClick}>Add Review</button>
                 <button type="button" id={business.id} onClick={editBusinessClick}>Edit</button>
                 <button type="button" id={business.id} onClick={deleteBusinessClick}>Delete</button>
                 </div>

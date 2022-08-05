@@ -8,7 +8,6 @@ def seed_businesses():
         zipcode="90012",
         city="Los Angeles",
         state="CA",
-        country="USA",
         phone_number="2139358399",
         website="http://www.howlinrays.com",
     )
@@ -19,7 +18,6 @@ def seed_businesses():
         zipcode="92620",
         city="Irvine",
         state="CA",
-        country="USA",
         phone_number="9494510011",
         website="https://mokkojishabushabu.com",
     )
@@ -30,7 +28,6 @@ def seed_businesses():
         zipcode="92865",
         city="Orange",
         state="CA",
-        country="USA",
         phone_number="7149980098",
         website="https://ohshimasushi.com",
     )
@@ -41,7 +38,6 @@ def seed_businesses():
         zipcode="92683",
         city="Westminster",
         state="CA",
-        country="USA",
         phone_number="7147338822",
         website="https://phoholic.com",
     )
@@ -52,7 +48,6 @@ def seed_businesses():
         zipcode="92708",
         city="Fountain Valley",
         state="CA",
-        country="USA",
         phone_number="6572474401",
         website="https://www.brodardrestaurant.net/",
     )
@@ -63,7 +58,6 @@ def seed_businesses():
         zipcode="91709",
         city="Chino Hills",
         state="CA",
-        country="USA",
         phone_number="9093648644",
         website="https://www.omomoteashoppe.com/",
     )
@@ -74,7 +68,6 @@ def seed_businesses():
         zipcode="90064",
         city="Los Angeles",
         state="CA",
-        country="USA",
         phone_number="4249778176",
         website="https://www.clover.com/online-ordering/hlswla",
     )
@@ -85,7 +78,6 @@ def seed_businesses():
         zipcode="90013",
         city="Los Angeles",
         state="CA",
-        country="USA",
         phone_number="2132324966",
         website="https://baveldtla.com/",
     )
@@ -96,7 +88,6 @@ def seed_businesses():
         zipcode="90021",
         city="Los Angeles",
         state="CA",
-        country="USA",
         phone_number="2135145724",
         website="https://bestiala.com/",
     )
@@ -107,7 +98,6 @@ def seed_businesses():
         zipcode="90028",
         city="Los Angeles",
         state="CA",
-        country="USA",
         phone_number="3235937763",
         website="https://shakeshack.com/",
     )
@@ -118,7 +108,6 @@ def seed_businesses():
         zipcode="92843",
         city="Garden Grove",
         state="CA",
-        country="USA",
         phone_number="7145312490",
         website="https://www.pho79.com/",
     )
@@ -129,7 +118,6 @@ def seed_businesses():
         zipcode="91776",
         city="San Gabriel",
         state="CA",
-        country="USA",
         phone_number="7141234567",
         website="http://www.bopomofocafe.com",
     )
@@ -140,7 +128,6 @@ def seed_businesses():
         zipcode="91801",
         city="Alhambra",
         state="CA",
-        country="USA",
         phone_number="6267827775",
         website="https://7leavescafe.com/",
     )
@@ -151,7 +138,6 @@ def seed_businesses():
         zipcode="92831",
         city="Fullerton",
         state="CA",
-        country="USA",
         phone_number="7144410000",
         website="https://www.mrbbqfullerton.com/",
     )
@@ -162,7 +148,6 @@ def seed_businesses():
         zipcode="92626",
         city="Costa Mesa",
         state="CA",
-        country="USA",
         phone_number="7149796700",
         website="https://anjin.com",
     )
@@ -173,7 +158,6 @@ def seed_businesses():
         zipcode="92708",
         city="Fountain Valley",
         state="CA",
-        country="USA",
         phone_number="7145938393",
         website="https://tsuruhashirestaurant.com/",
     )
@@ -184,7 +168,6 @@ def seed_businesses():
         zipcode="90501",
         city="Torrance",
         state="CA",
-        country="USA",
         phone_number="3106188357",
         website="http://www.hachius.com/",
     )
@@ -195,7 +178,6 @@ def seed_businesses():
         zipcode="90049",
         city="Los Angeles",
         state="CA",
-        country="USA",
         phone_number="3108204477",
         website="https://sugarfishsushi.com/",
     )
@@ -206,7 +188,6 @@ def seed_businesses():
         zipcode="90025",
         city="Los Angeles",
         state="CA",
-        country="USA",
         phone_number="4242930474",
         website="https://killernoodle.com/",
     )
@@ -217,7 +198,6 @@ def seed_businesses():
         zipcode="92606",
         city="Irvine",
         state="CA",
-        country="USA",
         phone_number="9495661766",
         website="https://www.haidilao.com/",
     )
@@ -228,7 +208,6 @@ def seed_businesses():
         zipcode="92604",
         city="Irvine",
         state="CA",
-        country="USA",
         phone_number="9499986328",
         website="https://www.baekjeongkbbq.com/",
     )
