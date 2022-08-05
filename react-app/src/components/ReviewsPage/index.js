@@ -1,4 +1,4 @@
-import { getReviewsThunk } from "../../store/review";
+import { getReviewsThunk, deleteReviewThunk, clearReviews } from "../../store/review";
 import { useDispatch, useSelector} from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useEffect } from "react";
@@ -9,15 +9,32 @@ function ReviewsPage() {
 
     const reviews = useSelector((state) => Object.values(state.reviews));
 
+    const url = window.location.href.split("/");
+    const num = Number(url[url.length -1]);
+
 useEffect(() => {
-    dispatch(getReviewsThunk());
-}, [dispatch])
+    dispatch(getReviewsThunk(num));
+}, [dispatch, num])
 
 
+const deleteReviewClick = (e) => {
+    e.preventDefault();
+    const buttonData = Number(e.target.id);
+    for (const review of reviews) {
+        if (review.id === buttonData) {
+            dispatch(deleteReviewThunk(review, buttonData))
+            history.push(`/reviews/business/${review.business.id}`)
+        }
+    }
+}
 
-
-return (
-    <>
+if (reviews.length === 0) {
+    return (
+        <h1 className="no-reviews">Be the first to add a review for this business!</h1>
+    );
+} else {
+    return (
+        <>
     <div>
         <h1>REVIEWS PAGE</h1>
         { reviews.map(review => {
@@ -26,12 +43,14 @@ return (
                 <h2>Review by {review.user.username} for {review.business.name}:</h2>
                 <h2>{review.review}</h2>
                 <h2>Rating: {review.rating}/5</h2>
+                <button type="button" id={review.id} onClick={deleteReviewClick}>Delete</button>
                 </div>
             )
         })}
     </div>
     </>
   );
+ }
 }
 
 export default ReviewsPage;

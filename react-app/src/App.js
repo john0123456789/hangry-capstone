@@ -12,6 +12,7 @@ import BusinessesPage from './components/BusinessesPage';
 import CreateBusinessPage from './components/CreateBusinessPage';
 import EditBusinessPage from './components/EditBusinessPage';
 import ReviewsPage from './components/ReviewsPage';
+import CreateReviewPage from './components/CreateReviewPage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -41,8 +42,11 @@ function App() {
         <Route path='/businesses/:id'>
           <EditBusinessPage/>
         </Route>
-        <Route path='/reviews'>
+        <Route path='/reviews/business/:id'>
           <ReviewsPage/>
+        </Route>
+        <Route path='/reviews/create/:id'>
+          <CreateReviewPage/>
         </Route>
         <Route path='/login' exact={true}>
           <LoginForm />

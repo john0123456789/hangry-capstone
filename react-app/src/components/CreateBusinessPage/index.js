@@ -8,6 +8,7 @@ function CreateBusinessPage() {
     const history = useHistory();
 
     const user = useSelector(state => state.session.user)
+    
     const [user_id] = useState(user.id);
     const [name, setName] = useState("");
     const [address, setAddress] = useState("");

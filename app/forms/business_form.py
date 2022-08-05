@@ -10,6 +10,5 @@ class BusinessForm(FlaskForm):
     zipcode = StringField("zipcode", validators=[DataRequired()])
     city = StringField("city", validators=[DataRequired()])
     state = StringField("state", validators=[DataRequired()])
-    country = StringField("country", validators=[DataRequired()])
     phone_number = StringField("phone_number", validators=[DataRequired()])
     website = StringField("website", validators=[DataRequired()])

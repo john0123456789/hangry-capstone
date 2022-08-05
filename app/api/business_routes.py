@@ -20,16 +20,15 @@ def create_business():
     form["csrf_token"].data = request.cookies["csrf_token"]
     # if form.validate_on_submit():
     business = Business(
-            user_id=form.data["user_id"],
-            name=form.data["name"],
-            address=form.data["address"],
-            zipcode=form.data["zipcode"],
-            city=form.data["city"],
-            state=form.data["state"],
-            country=form.data["country"],
-            phone_number=form.data["phone_number"],
-            website=form.data["website"]
-        )
+        user_id=form.data["user_id"],
+        name=form.data["name"],
+        address=form.data["address"],
+        zipcode=form.data["zipcode"],
+        city=form.data["city"],
+        state=form.data["state"],
+        phone_number=form.data["phone_number"],
+        website=form.data["website"]
+    )
 
     db.session.add(business)
     db.session.commit()
@@ -46,7 +45,6 @@ def update_business(id):
     business.zipcode = data['zipcode']
     business.city = data['city']
     business.state = data['state']
-    business.country = data['country']
     business.phone_number = data['phone_number']
     business.website = data['website']
 

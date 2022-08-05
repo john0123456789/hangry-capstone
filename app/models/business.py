@@ -11,7 +11,6 @@ class Business(db.Model):
     zipcode = db.Column(db.String(25), nullable=False)
     city = db.Column(db.String(50), nullable=False)
     state = db.Column(db.String(50), nullable=False)
-    country = db.Column(db.String(50), nullable=False)
     phone_number = db.Column(db.String(50), nullable=False)
     website = db.Column(db.String(255), nullable=False)
     created_at = db.Column(db.DateTime, default=datetime.datetime.now())
@@ -29,7 +28,6 @@ class Business(db.Model):
             "zipcode": self.zipcode,
             "city": self.city,
             "state": self.state,
-            "country": self.country,
             "phone_number": self.phone_number,
             "website": self.website,
             "business_images": [image.to_dict() for image in self.business_images],
