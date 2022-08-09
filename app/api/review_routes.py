@@ -31,12 +31,24 @@ def create_review():
     db.session.commit()
     return review.to_dict()
 
+# UPDATE REVIEW ROUTE
+@review_routes.route('<int:id>', methods=['PUT'])
+@login_required
+def update_review(id):
+    review = Review.query.get(id)
+    data = request.json
+    review.review = data['review']
+    review.rating = data['rating']
+
+    db.session.commit()
+    return review.to_dict()
+    
 # DELETE REVIEW ROUTE
 @review_routes.route("/<int:id>", methods=["DELETE"])
 @login_required
 def delete_review(id):
     review = Review.query.get(id)
-    
+
     db.session.delete(review)
     db.session.commit()
     return review.to_dict()

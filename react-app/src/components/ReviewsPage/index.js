@@ -16,14 +16,20 @@ useEffect(() => {
     dispatch(getReviewsThunk(num));
 }, [dispatch, num])
 
+const editReviewClick = (e) => {
+    e.preventDefault();
+    const buttonData = Number(e.target.id);
+    history.push(`/reviews/${buttonData}`)
+}
 
-const deleteReviewClick = (e) => {
+const deleteReviewClick = async (e) => {
     e.preventDefault();
     const buttonData = Number(e.target.id);
     for (const review of reviews) {
         if (review.id === buttonData) {
-            dispatch(deleteReviewThunk(review, buttonData))
-            history.push(`/reviews/business/${review.business.id}`)
+            await dispatch(deleteReviewThunk(review, buttonData))
+            await dispatch(getReviewsThunk(num))
+            alert("Deleting")
         }
     }
 }
@@ -43,6 +49,7 @@ if (reviews.length === 0) {
                 <h2>Review by {review.user.username} for {review.business.name}:</h2>
                 <h2>{review.review}</h2>
                 <h2>Rating: {review.rating}/5</h2>
+                <button type="button" id={review.id} onClick={editReviewClick}>Edit</button>
                 <button type="button" id={review.id} onClick={deleteReviewClick}>Delete</button>
                 </div>
             )

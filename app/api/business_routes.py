@@ -6,13 +6,13 @@ from app.forms.business_form import BusinessForm
 business_routes = Blueprint("businesses", __name__)
 
 
-#GET BUSINESS ROUTE
+# GET BUSINESS ROUTE
 @business_routes.route("")
 def get_business():
     businesses = Business.query.all()
     return {"businesses": [business.to_dict() for business in businesses]}
 
-#CREATE BUSINESS ROUTE
+# CREATE BUSINESS ROUTE
 @business_routes.route("/create", methods=['POST'])
 @login_required
 def create_business():
@@ -34,7 +34,7 @@ def create_business():
     db.session.commit()
     return business.to_dict()
 
-#UPDATE BUSINESS ROUTE
+# UPDATE BUSINESS ROUTE
 @business_routes.route('/<int:id>', methods=["PUT"])
 @login_required
 def update_business(id):
@@ -51,7 +51,7 @@ def update_business(id):
     db.session.commit()
     return business.to_dict()
 
-#DELETE BUSINESS ROUTE
+# DELETE BUSINESS ROUTE
 @business_routes.route('/<int:id>', methods=["DELETE"])
 @login_required
 def delete_business(id):

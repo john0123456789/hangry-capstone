@@ -13,6 +13,9 @@ import CreateBusinessPage from './components/CreateBusinessPage';
 import EditBusinessPage from './components/EditBusinessPage';
 import ReviewsPage from './components/ReviewsPage';
 import CreateReviewPage from './components/CreateReviewPage';
+import EditReviewPage from './components/EditReviewPage';
+import SingleBusinessPage from './components/SingleBusinessPage';
+import { getAllBusinessesThunk } from './store/business';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -21,6 +24,7 @@ function App() {
   useEffect(() => {
     (async() => {
       await dispatch(authenticate());
+      await dispatch(getAllBusinessesThunk());
       setLoaded(true);
     })();
   }, [dispatch]);
@@ -42,11 +46,17 @@ function App() {
         <Route path='/businesses/:id'>
           <EditBusinessPage/>
         </Route>
+        <Route path='/business/:id'>
+          <SingleBusinessPage/>
+        </Route>
         <Route path='/reviews/business/:id'>
           <ReviewsPage/>
         </Route>
         <Route path='/reviews/create/:id'>
           <CreateReviewPage/>
+        </Route>
+        <Route path='/reviews/:id'>
+          <EditReviewPage/>
         </Route>
         <Route path='/login' exact={true}>
           <LoginForm />
