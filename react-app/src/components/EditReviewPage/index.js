@@ -25,7 +25,6 @@ function EditReviewPage({review, business}) {
 
         await dispatch(updateReviewThunk(updateReview, review.id))
         await dispatch(getReviewsThunk(business.id))
-        alert("Changes Saved")
     }
 
     const deleteReviewClick = async (e) => {
