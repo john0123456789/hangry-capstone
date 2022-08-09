@@ -3,42 +3,34 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
 
-function CreateReviewPage() {
+function CreateReviewPage({business}) {
     const dispatch = useDispatch();
     const history = useHistory();
 
     const user = useSelector(state => state.session.user)
-    // const business = useSelector(state => state.businesses)
 
     const [user_id] = useState(user.id);
-    const [review, setReview] = useState("");
+    const [business_id] = useState(business.id)
+    const [business_review, setBusinessReview] = useState("");
     const [rating, setRating] = useState("");
 
     const createReviewClick = async (e) => {
         e.preventDefault();
-        const url = window.location.href.split('/')
-        const num = Number(url[url.length -1])
 
         const createReview = {
             user_id,
-            business_id: num,
-            review,
+            business_id,
+            business_review,
             rating
         }
 
-        dispatch(createReviewThunk(createReview))
-        dispatch(clearReviews());
-    }
-
-    const handleCancelClick = (e) => {
-        e.preventDefault();
-        history.push("/businesses")
+        await dispatch(createReviewThunk(createReview))
     }
 
     return (
-        <form className="review-form">
+        <form className="review-form" onSubmit={createReviewClick}>
             <h1>Create Review</h1>
-            <textarea type="text" placeholder="Your Review Here" value={review} onChange={(e) => setReview(e.target.value)}/>
+            <textarea type="text" placeholder="Your Review Here" value={business_review} onChange={(e) => setBusinessReview(e.target.value)}/>
             <select value={rating} onChange={(e) => setRating(parseInt(e.target.value, 10))}>
             <option>Select Rating</option>
             <option value="1">1</option>
@@ -47,8 +39,7 @@ function CreateReviewPage() {
             <option value="4">4</option>
             <option value="5">5</option>
             </select>
-            <button type="submit"onClick={createReviewClick}>Post Review</button>
-            <button type="button" onClick={handleCancelClick}>Cancel</button>
+            <button type="submit">Post Review</button>
         </form>
     )
 

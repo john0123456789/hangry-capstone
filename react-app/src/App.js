@@ -8,12 +8,7 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
-import BusinessesPage from './components/BusinessesPage';
 import CreateBusinessPage from './components/CreateBusinessPage';
-import EditBusinessPage from './components/EditBusinessPage';
-import ReviewsPage from './components/ReviewsPage';
-import CreateReviewPage from './components/CreateReviewPage';
-import EditReviewPage from './components/EditReviewPage';
 import SingleBusinessPage from './components/SingleBusinessPage';
 import { getAllBusinessesThunk } from './store/business';
 
@@ -37,26 +32,11 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Switch>
-        <Route path='/businesses' exact={true}>
-          <BusinessesPage/>
-        </Route>
         <Route path='/businesses/create' exact={true}>
           <CreateBusinessPage/>
         </Route>
-        <Route path='/businesses/:id'>
-          <EditBusinessPage/>
-        </Route>
         <Route path='/business/:id'>
           <SingleBusinessPage/>
-        </Route>
-        <Route path='/reviews/business/:id'>
-          <ReviewsPage/>
-        </Route>
-        <Route path='/reviews/create/:id'>
-          <CreateReviewPage/>
-        </Route>
-        <Route path='/reviews/:id'>
-          <EditReviewPage/>
         </Route>
         <Route path='/login' exact={true}>
           <LoginForm />

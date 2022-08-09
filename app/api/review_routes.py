@@ -23,7 +23,7 @@ def create_review():
     review = Review(
         user_id=form.data["user_id"],
         business_id=form.data["business_id"],
-        review=form.data["review"],
+        business_review=form.data["business_review"],
         rating=form.data["rating"]
     )
 
@@ -37,12 +37,12 @@ def create_review():
 def update_review(id):
     review = Review.query.get(id)
     data = request.json
-    review.review = data['review']
+    review.business_review = data['business_review']
     review.rating = data['rating']
 
     db.session.commit()
     return review.to_dict()
-    
+
 # DELETE REVIEW ROUTE
 @review_routes.route("/<int:id>", methods=["DELETE"])
 @login_required

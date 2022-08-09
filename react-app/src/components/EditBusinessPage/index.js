@@ -45,7 +45,7 @@ function EditBusinessPage() {
 
     return (
         <form className="business-form">
-            <h1>Add your business!</h1>
+            <h1>Edit your business!</h1>
             <input type="text" placeholder="Business Name" value={name} onChange={(e) => setName(e.target.value)}/>
             <input type="text" placeholder="Street Address i.e. 123 Apple St" value={address} onChange={(e) => setAddress(e.target.value)}/>
             <input type="text" placeholder="Zipcode i.e. 12345" value={zipcode} onChange={(e) => setZipcode(e.target.value)}/>

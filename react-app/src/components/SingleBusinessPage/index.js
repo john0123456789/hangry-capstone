@@ -13,10 +13,7 @@ function SingleBusinessPage() {
 
     const url = window.location.href.split("/");
     const num = Number(url[url.length - 1]);
-
-
-    // const user = useSelector((state) => state.session.user)
-    // const businesses = useSelector((state) => Object.values(state.business))
+    
     const business = useSelector((state) => Object.values(state.businesses).find((businesses) => businesses?.id === num))
 
     useEffect(() => {
