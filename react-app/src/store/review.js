@@ -65,12 +65,12 @@ export const updateReviewThunk = (review, id) => async (dispatch) => {
     }
 }
 
-export const deleteReviewThunk = (review, id) => async (dispatch) => {
+export const deleteReviewThunk = (id) => async (dispatch) => {
     const response = await fetch(`/api/reviews/${id}`, {
         method: "DELETE",
     })
     if (response.ok) {
-        const reviewId = await response.json(review)
+        const reviewId = await response.json()
         dispatch(deleteReview(reviewId))
     }
 }
