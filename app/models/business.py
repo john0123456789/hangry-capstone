@@ -30,6 +30,5 @@ class Business(db.Model):
             "state": self.state,
             "phone_number": self.phone_number,
             "website": self.website,
-            "business_images": [image.to_dict() for image in self.business_images],
             "created_at": self.created_at,
         }

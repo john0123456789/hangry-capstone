@@ -57,14 +57,13 @@ export const updateBusinessThunk = (business, id) => async (dispatch) => {
     }
 }
 
-export const deleteBusinessThunk = (business, id) => async (dispatch) => {
+export const deleteBusinessThunk = (id) => async (dispatch) => {
     const response = await fetch(`/api/businesses/${id}`, {
         method: "DELETE",
     })
     if (response.ok) {
-        const businessId = await response.json(business)
+        const businessId = await response.json()
         dispatch(deleteBusiness(businessId))
-        return businessId;
     }
 }
 

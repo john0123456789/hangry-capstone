@@ -71,6 +71,7 @@ export const deleteReviewThunk = (id) => async (dispatch) => {
     })
     if (response.ok) {
         const reviewId = await response.json()
+        console.log(reviewId)
         dispatch(deleteReview(reviewId))
     }
 }

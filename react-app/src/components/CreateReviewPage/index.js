@@ -1,11 +1,9 @@
 import { createReviewThunk, clearReviews } from "../../store/review";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
 import { useState } from "react";
 
 function CreateReviewPage({business}) {
     const dispatch = useDispatch();
-    const history = useHistory();
 
     const user = useSelector(state => state.session.user)
 

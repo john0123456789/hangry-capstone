@@ -1,24 +1,17 @@
-import { updateBusinessThunk, getAllBusinessesThunk } from "../../store/business";
+import { updateBusinessThunk, getAllBusinessesThunk, deleteBusinessThunk } from "../../store/business";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
 import { useState } from "react";
 
-function EditBusinessPage() {
+function EditBusinessPage({business}) {
     const dispatch = useDispatch();
-    const history = useHistory();
 
-    const { id } = useParams();
-    const business = useSelector(state => state.businesses)
-    const singleBusiness = business[id]
-
-
-    const [name, setName] = useState(singleBusiness.name);
-    const [address, setAddress] = useState(singleBusiness.address);
-    const [zipcode, setZipcode] = useState(singleBusiness.zipcode);
-    const [city, setCity] = useState(singleBusiness.city);
-    const [state, setState] = useState(singleBusiness.state);
-    const [phone_number, setPhoneNumber] = useState(singleBusiness.phone_number);
-    const [website, setWebsite] = useState(singleBusiness.website);
+    const [name, setName] = useState(business.name);
+    const [address, setAddress] = useState(business.address);
+    const [zipcode, setZipcode] = useState(business.zipcode);
+    const [city, setCity] = useState(business.city);
+    const [state, setState] = useState(business.state);
+    const [phone_number, setPhoneNumber] = useState(business.phone_number);
+    const [website, setWebsite] = useState(business.website);
 
     const handleBusinessUpdate = async (e) => {
         e.preventDefault();
@@ -33,12 +26,18 @@ function EditBusinessPage() {
             website
         }
 
-        dispatch(updateBusinessThunk(updateBusiness, id));
-        dispatch(getAllBusinessesThunk())
+        await dispatch(updateBusinessThunk(updateBusiness, business.id));
+        await dispatch(getAllBusinessesThunk())
+    }
+
+    const deleteBusinessClick = async (e) => {
+        e.preventDefault()
+        dispatch(deleteBusinessThunk(business.id));
     }
 
     return (
-        <form className="business-form">
+        <>
+        <form className="business-form" onSubmit={handleBusinessUpdate}>
             <h1>Edit your business!</h1>
             <input type="text" placeholder="Business Name" value={name} onChange={(e) => setName(e.target.value)}/>
             <input type="text" placeholder="Street Address i.e. 123 Apple St" value={address} onChange={(e) => setAddress(e.target.value)}/>
@@ -100,8 +99,10 @@ function EditBusinessPage() {
             </select>
             <input type="text" placeholder="Phone Number i.e. 1234567891" value={phone_number} onChange={(e) => setPhoneNumber(e.target.value)}/>
             <input type="text" placeholder="Website URL i.e. https://abc.com" value={website} onChange={(e) => setWebsite(e.target.value)}/>
-            <button type="submit" onClick={handleBusinessUpdate}>Save Changes</button>
+            <button type="submit">Save Changes</button>
         </form>
+        <button onClick={(e) => deleteBusinessClick(e)}>Delete</button>
+        </>
     )
 }
 
