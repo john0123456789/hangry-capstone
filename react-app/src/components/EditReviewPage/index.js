@@ -31,8 +31,6 @@ function EditReviewPage({review, business}) {
         e.preventDefault()
 
         await dispatch(deleteReviewThunk(review.id))
-        await dispatch(clearReviews())
-        await dispatch(getReviewsThunk(business.id))
     }
 
 

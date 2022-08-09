@@ -41,7 +41,7 @@ def update_review(id):
     review.rating = data['rating']
 
     db.session.commit()
-    return review.to_dict()
+    return {"id": id}
 
 # DELETE REVIEW ROUTE
 @review_routes.route("/<int:id>", methods=["DELETE"])
@@ -51,4 +51,4 @@ def delete_review(id):
 
     db.session.delete(review)
     db.session.commit()
-    return review.to_dict()
+    return {"id": id}

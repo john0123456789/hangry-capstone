@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector} from "react-redux";
-import { useHistory } from "react-router-dom";
 import { getAllBusinessesThunk } from '../../store/business';
 import EditBusinessPage from '../EditBusinessPage/index'
 import ReviewsPage from "../ReviewsPage";
@@ -9,17 +8,22 @@ import CreateReviewPage from "../CreateReviewPage";
 
 function SingleBusinessPage() {
     const dispatch = useDispatch();
-    const history = useHistory();
 
     const url = window.location.href.split("/");
     const num = Number(url[url.length - 1]);
-    
+
+    const businesses = useSelector((state) => Object.values(state.businesses))
     const business = useSelector((state) => Object.values(state.businesses).find((businesses) => businesses?.id === num))
 
     useEffect(() => {
         dispatch(getAllBusinessesThunk())
     }, [dispatch])
 
+    if (!business) {
+        return (
+            <h1 className="no-business">Oops! There is no longer a business here!</h1>
+        );
+    } else {
     return (
         <>
             <div >
@@ -47,6 +51,7 @@ function SingleBusinessPage() {
                     </>
             </div>
         </>
-        )
+    )
+  }
 }
 export default SingleBusinessPage;

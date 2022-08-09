@@ -8,7 +8,7 @@ function CreateBusinessPage() {
     const history = useHistory();
 
     const user = useSelector(state => state.session.user)
-    
+
     const [user_id] = useState(user.id);
     const [name, setName] = useState("");
     const [address, setAddress] = useState("");
@@ -34,13 +34,13 @@ function CreateBusinessPage() {
 
         let newBusiness = await dispatch(createBusinessThunk(createBusiness))
             if(newBusiness) {
-                history.push('/businesses')
+                history.push('/')
             }
     }
 
     const handleCancelClick = (e) => {
         e.preventDefault();
-        history.push("/businesses")
+        history.push("/")
     }
 
     return (
