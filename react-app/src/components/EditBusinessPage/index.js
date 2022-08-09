@@ -35,12 +35,6 @@ function EditBusinessPage() {
 
         dispatch(updateBusinessThunk(updateBusiness, id));
         dispatch(getAllBusinessesThunk())
-        history.push("/businesses");
-    }
-
-    const handleCancelClick = (e) => {
-        e.preventDefault();
-        history.push("/businesses")
     }
 
     return (
@@ -107,7 +101,6 @@ function EditBusinessPage() {
             <input type="text" placeholder="Phone Number i.e. 1234567891" value={phone_number} onChange={(e) => setPhoneNumber(e.target.value)}/>
             <input type="text" placeholder="Website URL i.e. https://abc.com" value={website} onChange={(e) => setWebsite(e.target.value)}/>
             <button type="submit" onClick={handleBusinessUpdate}>Save Changes</button>
-            <button type="button" onClick={handleCancelClick}>Cancel</button>
         </form>
     )
 }
