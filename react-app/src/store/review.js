@@ -1,5 +1,6 @@
 const GET_REVIEWS = "reviews/GET_REVIEWS"
 const CREATE_REVIEW = "reviews/CREATE_REVIEW"
+const UPDATE_REVIEW = "reviews/UPDATE_REVIEW"
 const DELETE_REVIEW = "reviews/DELETE_REVIEW"
 const CLEAR_REVIEWS = "reviews/CLEAR_REVIEWS"
 
@@ -19,6 +20,11 @@ const createReview = (review) => ({
     review
 })
 
+const updateReview = (review) => ({
+    type: UPDATE_REVIEW,
+    review
+})
+
 const deleteReview = (review) => ({
     type: DELETE_REVIEW,
     review
@@ -34,7 +40,7 @@ export const getReviewsThunk = (id) => async (dispatch) => {
 export const createReviewThunk = (review) => async (dispatch) => {
     const response = await fetch(`/api/reviews`, {
       method: 'POST',
-      headers: { 'Content-Type' : 'application/json' },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(review)
     });
 
@@ -45,6 +51,20 @@ export const createReviewThunk = (review) => async (dispatch) => {
     }
   };
 
+export const updateReviewThunk = (review, id) => async (dispatch) => {
+    const response = await fetch(`/api/reviews/${id}`, {
+        method: "PUT",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(review)
+    })
+
+    if (response.ok) {
+        const updatedReview = await response.json()
+        dispatch(updateReview(updatedReview))
+        return updatedReview
+    }
+}
+
 export const deleteReviewThunk = (review, id) => async (dispatch) => {
     const response = await fetch(`/api/reviews/${id}`, {
         method: "DELETE",
@@ -52,7 +72,6 @@ export const deleteReviewThunk = (review, id) => async (dispatch) => {
     if (response.ok) {
         const reviewId = await response.json(review)
         dispatch(deleteReview(reviewId))
-        return reviewId;
     }
 }
 
@@ -74,6 +93,8 @@ const reviewsReducer = (state = initialState, action) => {
                 }
             }
             return newState;
+        case UPDATE_REVIEW:
+            newState = {...state, [action.review.id]: action.review}
         case DELETE_REVIEW:
             delete newState[action.review.id]
             return newState;

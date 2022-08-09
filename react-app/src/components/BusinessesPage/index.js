@@ -54,7 +54,7 @@ return (
                 <h2>Address:{business.address}, {business.city}, {business.state} {business.zipcode}</h2>
                 <h2>{business.phone_number}</h2>
                 <h2>{business.website}</h2>
-                <img alt="business_images" src={business.business_images.url}></img>
+                {/* <img alt="business_images" src={business.business_images.url}></img> */}
                 <button type="button" id={business.id} onClick={getReviewClick}>Reviews</button>
                 <button type="button" id={business.id} onClick={addReviewClick}>Add Review</button>
                 <button type="button" id={business.id} onClick={editBusinessClick}>Edit</button>
