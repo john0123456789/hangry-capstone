@@ -32,26 +32,20 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Switch>
-        <Route path='/businesses/create' exact={true}>
-          <CreateBusinessPage/>
-        </Route>
-        <Route path='/business/:id'>
-          <SingleBusinessPage/>
-        </Route>
         <Route path='/login' exact={true}>
           <LoginForm />
         </Route>
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
         </Route>
-        <ProtectedRoute path='/users' exact={true} >
-          <UsersList/>
-        </ProtectedRoute>
-        <ProtectedRoute path='/users/:userId' exact={true} >
-          <User />
-        </ProtectedRoute>
+        <Route path='/businesses/create'>
+          <CreateBusinessPage/>
+        </Route>
+        <Route path='/business/:id'>
+          <SingleBusinessPage/>
+        </Route>
         <ProtectedRoute path='/' exact={true} >
-          <h1>My Home Page</h1>
+          <h1>Welcome to Hangry!</h1>
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

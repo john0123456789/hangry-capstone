@@ -1,38 +1,64 @@
 
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import LogoutButton from './auth/LogoutButton';
+import { FiPlusSquare } from 'react-icons/fi';
+import './NavBar.css'
 
 const NavBar = () => {
+  const user = useSelector(state => state.session.user);
+  const history = useHistory();
+
+  const homeClick = (e) => {
+    e.preventDefault();
+    history.push('/')
+  }
+
+  const toLogin = (e) => {
+    e.preventDefault();
+    history.push('/login')
+  }
+
+  const toSignup = (e) => {
+    e.preventDefault();
+    history.push('/sign-up')
+  }
+
+  const createBusiness = (e) => {
+    e.preventDefault();
+    history.push('/businesses/create')
+  }
+
+  if  (user) {
   return (
     <nav>
-      <ul>
-        <li>
-          <NavLink to='/' exact={true} activeClassName='active'>
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to='/login' exact={true} activeClassName='active'>
-            Login
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to='/sign-up' exact={true} activeClassName='active'>
-            Sign Up
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to='/users' exact={true} activeClassName='active'>
-            Users
-          </NavLink>
-        </li>
-        <li>
-          <LogoutButton />
-        </li>
-      </ul>
+      <div>
+        <div>
+          <img src="https://i.imgur.com/dxJVLEP.png" alt="logo" className="hangry-logo" onClick={homeClick}/>
+        </div>
+        <div>
+          <button type="button" className="userbuttons" onClick={createBusiness}><FiPlusSquare size="30px"/></button>
+          <button type="button" className="userbuttons"><LogoutButton/></button>
+        </div>
+      </div>
     </nav>
   );
+ } else {
+  return (
+    <nav>
+      <div>
+        <div>
+          <img src="https://i.imgur.com/dxJVLEP.png" alt="logo" className="hangry-logo" onClick={homeClick}/>
+        </div>
+        <div className="navbtns">
+          <button type="button" className="navbutton" onClick={toLogin}>Log In</button>
+          <button type="button" className="navbutton" onClick={toSignup}>Sign Up</button>
+        </div>
+      </div>
+  </nav>
+  )
+ }
 }
 
 export default NavBar;

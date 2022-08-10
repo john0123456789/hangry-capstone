@@ -1,0 +1,38 @@
+nav {
+    background-color: #C2372F;
+}
+
+.hangry-logo {
+    position: relative;
+    cursor: pointer;
+    width: 250px;
+    height: auto;
+}
+
+.navbutton {
+    background-color: transparent;
+    cursor: pointer;
+    border: white 1px solid;
+    border-radius: 2px;
+    color: white;
+    position: relative;
+    left: 90%;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.userbuttons {
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    color: white;
+    position: relative;
+    left: 90%;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.navbtns {
+    position: relative;
+    bottom: 35px;
+}
