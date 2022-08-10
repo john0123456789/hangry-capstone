@@ -51,10 +51,8 @@ const NavBar = () => {
         <div>
           <img src="https://i.imgur.com/dxJVLEP.png" alt="logo" className="hangry-logo" onClick={homeClick}/>
         </div>
-        <div className="navbtns">
           <button type="button" className="navbutton" onClick={toLogin}>Log In</button>
           <button type="button" className="navbutton" onClick={toSignup}>Sign Up</button>
-        </div>
       </div>
   </nav>
   )
