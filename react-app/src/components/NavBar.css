@@ -32,3 +32,41 @@ nav {
     font-size: 18px;
     padding: 5px;
 }
+
+.userbuttons .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgba(0, 0, 0, 0.678);
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.userbuttons:hover .tooltiptext {
+    visibility: visible;
+}
+
+.userbuttons .tooltiptext2 {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgba(0, 0, 0, 0.678);
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.userbuttons:hover .tooltiptext2 {
+    visibility: visible;
+}
