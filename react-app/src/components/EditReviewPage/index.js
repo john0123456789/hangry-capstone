@@ -2,7 +2,7 @@ import { updateReviewThunk, getReviewsThunk, deleteReviewThunk, clearReviews } f
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 
-function EditReviewPage({review, business}) {
+function EditReviewPage({review, business, setShowModal}) {
     const dispatch = useDispatch();
 
     const user = useSelector(state => state.session.user)
@@ -25,12 +25,14 @@ function EditReviewPage({review, business}) {
 
         await dispatch(updateReviewThunk(updateReview, review.id))
         await dispatch(getReviewsThunk(business.id))
+        setShowModal(false);
     }
 
     const deleteReviewClick = async (e) => {
         e.preventDefault()
 
         await dispatch(deleteReviewThunk(review.id))
+        setShowModal(false);
     }
 
 

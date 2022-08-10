@@ -1,7 +1,7 @@
 import { getReviewsThunk } from "../../store/review";
 import { useDispatch, useSelector} from "react-redux";
 import { useEffect } from "react";
-import EditReviewPage from "../EditReviewPage/index"
+import EditReviewModal from "../EditReviewPage/EditReviewModal"
 
 
 function ReviewsPage({business}) {
@@ -30,7 +30,8 @@ if (reviews.length === 0) {
                 <h2>Review by {review.user.username} for {review.business.name}:</h2>
                 <h2>{review.business_review}</h2>
                 <h2>Rating: {review.rating}/5</h2>
-                <EditReviewPage business={business} review={review}/>
+                {review.user.id === user.id ? (
+                <EditReviewModal business={business} review={review}/>): null }
                 </div>
             )
         })}

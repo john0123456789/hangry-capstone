@@ -2,7 +2,7 @@ import { updateBusinessThunk, getAllBusinessesThunk, deleteBusinessThunk } from 
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 
-function EditBusinessPage({business}) {
+function EditBusinessPage({business, setShowModal}) {
     const dispatch = useDispatch();
 
     const [name, setName] = useState(business.name);
@@ -28,11 +28,13 @@ function EditBusinessPage({business}) {
 
         await dispatch(updateBusinessThunk(updateBusiness, business.id));
         await dispatch(getAllBusinessesThunk())
+        setShowModal(false);
     }
 
     const deleteBusinessClick = async (e) => {
         e.preventDefault()
         dispatch(deleteBusinessThunk(business.id));
+        setShowModal(false);
     }
 
     return (

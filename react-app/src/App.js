@@ -44,9 +44,9 @@ function App() {
         <Route path='/business/:id'>
           <SingleBusinessPage/>
         </Route>
-        <ProtectedRoute path='/' exact={true} >
+        <Route path='/' exact={true} >
           <h1>Welcome to Hangry!</h1>
-        </ProtectedRoute>
+        </Route>
       </Switch>
     </BrowserRouter>
   );
