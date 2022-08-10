@@ -1,0 +1,7 @@
+.star-rating input {
+    display: none;
+}
+
+.star-rating {
+    font-size: 25px;
+}
