@@ -22,6 +22,11 @@ nav {
     bottom: 35px;
 }
 
+.navbutton:hover {
+    background-color: #d4d4d4;
+    border:white 1px solid;
+}
+
 .userbuttons {
     background-color: transparent;
     cursor: pointer;
