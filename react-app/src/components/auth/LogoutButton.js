@@ -7,8 +7,9 @@ import { HiOutlineLogout } from 'react-icons/hi';
 const LogoutButton = () => {
   const dispatch = useDispatch()
   const history = useHistory()
+
   const onLogout = async (e) => {
-    await dispatch(logout());
+    dispatch(logout());
     history.push('/login')
   };
 

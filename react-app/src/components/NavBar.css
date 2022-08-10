@@ -3,7 +3,6 @@ nav {
 }
 
 .hangry-logo {
-    position: relative;
     cursor: pointer;
     width: 250px;
     height: auto;
@@ -19,6 +18,8 @@ nav {
     left: 90%;
     font-size: 18px;
     padding: 5px;
+    position: relative;
+    bottom: 35px;
 }
 
 .userbuttons {
@@ -30,9 +31,4 @@ nav {
     left: 90%;
     font-size: 18px;
     padding: 5px;
-}
-
-.navbtns {
-    position: relative;
-    bottom: 35px;
 }
