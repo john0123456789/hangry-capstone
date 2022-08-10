@@ -1,9 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector} from "react-redux";
 import { getAllBusinessesThunk } from '../../store/business';
-import EditBusinessPage from '../EditBusinessPage/index'
+import EditBusinessModal from '../EditBusinessPage/EditBusinessModal'
 import ReviewsPage from "../ReviewsPage";
-import CreateReviewPage from "../CreateReviewPage";
+import CreateReviewModal from "../CreateReviewPage/CreateReviewModal";
 
 
 function SingleBusinessPage() {
@@ -12,7 +12,7 @@ function SingleBusinessPage() {
     const url = window.location.href.split("/");
     const num = Number(url[url.length - 1]);
 
-    const businesses = useSelector((state) => Object.values(state.businesses))
+    const user = useSelector((state) => state.session.user)
     const business = useSelector((state) => Object.values(state.businesses).find((businesses) => businesses?.id === num))
 
     useEffect(() => {
@@ -37,11 +37,13 @@ function SingleBusinessPage() {
                             <h2> {business.state} </h2>
                             <h2> {business.phone_number} </h2>
                             <h2> {business.website} </h2>
+                            {business.user_id === user.id ? (
                             <div>
-                                <EditBusinessPage business={business}/>
+                                <EditBusinessModal business={business}/>
                             </div>
+                            ): null  }
                             <div>
-                                <CreateReviewPage business={business}/>
+                                <CreateReviewModal business={business}/>
                             </div>
                             <div>
                                 <ReviewsPage business={business}/>

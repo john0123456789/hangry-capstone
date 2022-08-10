@@ -2,7 +2,7 @@ import { createReviewThunk, clearReviews } from "../../store/review";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 
-function CreateReviewPage({business}) {
+function CreateReviewPage({business, setShowModal}) {
     const dispatch = useDispatch();
 
     const user = useSelector(state => state.session.user)
@@ -23,6 +23,7 @@ function CreateReviewPage({business}) {
         }
 
         await dispatch(createReviewThunk(createReview))
+        setShowModal(false);
     }
 
     return (
@@ -30,6 +31,8 @@ function CreateReviewPage({business}) {
             <h1>Create Review</h1>
             <textarea type="text" placeholder="Your Review Here" value={business_review} onChange={(e) => setBusinessReview(e.target.value)}/>
             <select value={rating} onChange={(e) => setRating(parseInt(e.target.value, 10))}>
+            {/* input radio button , name property to other radio buttons, give them the same name*/}
+            {/* each radio button label,  star code &#9733; display none in css to hide radio*/}
             <option>Select Rating</option>
             <option value="1">1</option>
             <option value="2">2</option>
