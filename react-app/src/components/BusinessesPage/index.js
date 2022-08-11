@@ -16,7 +16,7 @@ useEffect(() => {
 
 return (
     <>
-    <div>
+    <div className="business-page">
         <h1>Hangry? Check These Businesses Out!</h1>
         { businesses.map(business =>{
             return (
