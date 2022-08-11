@@ -61,7 +61,8 @@ body {
 }
 
 .loginbutton:hover {
-    background-color: #d4d4d4;
+    background-color: #C2372F;
+    color: white;
     border:none;
     padding:0.25em 1em;
     margin: 0 0.2em 0.2em 0;
@@ -95,6 +96,6 @@ body {
 }
 
 .navbutton:hover {
-    background-color: #d4d4d4;
+    background-color: red;
     border:white 1px solid;
 }

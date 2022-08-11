@@ -28,12 +28,11 @@ function SingleBusinessPage() {
     return (
         <>
             <div >
-                <h1>Business</h1>
+                <h1>{business.name}</h1>
                     <>
                         <>
                         <div class="business-container">
-                            <h2> {business.name} </h2>
-                            <h2> {business.address}, {business.city}, {business.zipcode}, {business.state} </h2>
+                            <h2> {business.address}, {business.city}, {business.state} {business.zipcode} </h2>
                             <h2> {business.phone_number} </h2>
                             <h2> {business.website} </h2>
                             {business.user_id === user.id ? (
