@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
-import CreateBusinessPage from './index'
-import { FiPlusSquare } from 'react-icons/fi';
+import LoginForm from './LoginForm';
 
 
-function CreateBusinessModal() {
+function LoginFormModal() {
     const [showModal, setShowModal] = useState(false);
 
     return (
       <>
-        <FiPlusSquare size="30px" onClick={() => setShowModal(true)}/>
+        <button type="button" className="navbutton" onClick={() => setShowModal(true)}>Login</button>
         {showModal && (
           <Modal onClose={() => setShowModal(false)} onSubmit={() => setShowModal(false)}>
-            <CreateBusinessPage setShowModal={setShowModal}/>
+            <LoginForm setShowModal={setShowModal}/>
           </Modal>
         )}
       </>
     );
   }
-  export default CreateBusinessModal;
+  export default LoginFormModal;

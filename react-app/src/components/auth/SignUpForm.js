@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
 import './SignUpForm.css'
 
-const SignUpForm = () => {
+const SignUpForm = ({setShowModal}) => {
 
   let errorsObj = {content: ''};
   const [reactErrors, setReactErrors] = useState(errorsObj)
@@ -79,6 +79,7 @@ const SignUpForm = () => {
   };
 
   if (user) {
+    setShowModal(false)
     return <Redirect to='/' />;
   }
 
@@ -89,7 +90,7 @@ const SignUpForm = () => {
       <div className="signuperrors">
         {Object.values(reactErrors).map((error, idx) => <ul key={idx}>{error}</ul>)}
       </div>
-      <div>
+      <div className="signupbackenderrors">
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}

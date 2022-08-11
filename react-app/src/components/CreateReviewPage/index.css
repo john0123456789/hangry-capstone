@@ -18,11 +18,16 @@
     cursor: pointer;
   }
 
+.star-rating input + label:hover~label:before,
+.star-rating input + label:hover:before {
+  color: #888;
+  }
+
 .star-rating :checked~label {
     color: #C2372F;
   }
 
 .star-rating label:hover,
 .star-rating label:hover~label {
-    color: orange;
+    color: #C2372F;
   }

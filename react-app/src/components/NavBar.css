@@ -8,25 +8,6 @@ nav {
     height: auto;
 }
 
-.navbutton {
-    background-color: transparent;
-    cursor: pointer;
-    border: white 1px solid;
-    border-radius: 2px;
-    color: white;
-    position: relative;
-    left: 90%;
-    font-size: 18px;
-    padding: 5px;
-    position: relative;
-    bottom: 35px;
-}
-
-.navbutton:hover {
-    background-color: #d4d4d4;
-    border:white 1px solid;
-}
-
 .userbuttons {
     background-color: transparent;
     cursor: pointer;

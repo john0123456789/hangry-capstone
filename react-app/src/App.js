@@ -5,12 +5,11 @@ import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
 import NavBar from './components/NavBar';
 import ProtectedRoute from './components/auth/ProtectedRoute';
-import UsersList from './components/UsersList';
-import User from './components/User';
 import { authenticate } from './store/session';
 import CreateBusinessPage from './components/CreateBusinessPage';
 import SingleBusinessPage from './components/SingleBusinessPage';
 import { getAllBusinessesThunk } from './store/business';
+import SplashPage from './components/SplashPage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -45,7 +44,7 @@ function App() {
           <SingleBusinessPage/>
         </Route>
         <Route path='/' exact={true} >
-          <h1>Welcome to Hangry!</h1>
+          <SplashPage/>
         </Route>
       </Switch>
     </BrowserRouter>

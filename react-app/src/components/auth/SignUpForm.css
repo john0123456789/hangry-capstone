@@ -6,6 +6,7 @@
     margin: auto;
     border-radius: 10px;
     text-align: center;
+    padding: 20px;
 }
 
 .inputs {
@@ -73,7 +74,6 @@ body {
 .signupformtitle {
     color: #C2372F;
     font-family: Helvetica;
-    padding-top: 20px;
 }
 
 .h2title {
@@ -87,4 +87,29 @@ body {
     font-family: Helvetica;
     font-size: 11px;
     padding-right: 45px;
+}
+
+.navbutton {
+    background-color: transparent;
+    cursor: pointer;
+    border: white 1px solid;
+    border-radius: 2px;
+    color: white;
+    position: relative;
+    left: 90%;
+    font-size: 18px;
+    padding: 5px;
+    position: relative;
+    bottom: 35px;
+}
+
+.navbutton:hover {
+    background-color: #d4d4d4;
+    border:white 1px solid;
+}
+
+.signupbackenderrors {
+    color: red;
+    font-family: Helvetica;
+    font-size: 11px;
 }
