@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import { useState } from "react";
 import './index.css'
 
-function CreateBusinessPage() {
+function CreateBusinessPage({setShowModal}) {
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -90,6 +90,7 @@ function CreateBusinessPage() {
 
         let newBusiness = await dispatch(createBusinessThunk(createBusiness))
             if(newBusiness) {
+                setShowModal(false)
                 history.push('/')
             }
         }
@@ -97,6 +98,7 @@ function CreateBusinessPage() {
 
     const handleCancelClick = (e) => {
         e.preventDefault();
+        setShowModal(false)
         history.push("/")
     }
 

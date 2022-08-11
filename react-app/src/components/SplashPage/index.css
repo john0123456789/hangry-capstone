@@ -1,0 +1,12 @@
+.splash-title {
+    color: #C2372F;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.splash-img {
+    display: block;
+    height: auto;
+    width: 500px;
+    margin: auto;
+}
