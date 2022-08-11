@@ -30,7 +30,7 @@ function CreateReviewPage({business, setShowModal}) {
     return (
         <form className="review-form" onSubmit={createReviewClick}>
             <h1>Create Review</h1>
-            <textarea type="text" placeholder="Your Review Here" value={business_review} onChange={(e) => setBusinessReview(e.target.value)}/>
+            <textarea type="text" className="reviewarea" placeholder="Your Review Here" value={business_review} onChange={(e) => setBusinessReview(e.target.value)}/>
             <div className="star-rating">
                 <input type="radio" id="5star" value="5" name="stars" onChange={(e) => setRating(parseInt(e.target.value, 10))}/>
                 <label htmlFor="5star">&#9733;</label>
@@ -43,7 +43,7 @@ function CreateReviewPage({business, setShowModal}) {
                 <input type="radio" id="1star" value="1" name="stars" onChange={(e) => setRating(parseInt(e.target.value, 10))}/>
                 <label htmlFor="1star">&#9733;</label>
             </div>
-            <button type="submit">Post Review</button>
+            <button className="createreviewbutton" type="submit">Post Review</button>
         </form>
     )
 
