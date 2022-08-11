@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector} from "react-redux";
 import { getAllBusinessesThunk } from '../../store/business';
 import EditBusinessModal from '../EditBusinessPage/EditBusinessModal'

@@ -26,7 +26,7 @@ const SignUpForm = () => {
       errorsObj.username = "Username field cannot be empty.";
       error = true;
     } else if (username.length < 5 || username.length > 20) {
-      errorsObj.username = "Usernames must be longer than 5 characters and shorter than 20.";
+      errorsObj.username = "Username must be longer than 5 characters and shorter than 20.";
       error = true;
     }
     if(email === '') {
@@ -37,6 +37,9 @@ const SignUpForm = () => {
     }
     if(password === '') {
       errorsObj.password = "Password field cannot be empty.";
+      error = true;
+    } else if (password.length < 8) {
+      errorsObj.password = "Password must be 8 characters or longer."
       error = true;
     }
     if(repeatPassword === '') {
@@ -81,7 +84,9 @@ const SignUpForm = () => {
 
   return (
     <form className="signupform" onSubmit={onSignUp}>
-      <div className="errors">
+      <h1 className="signupformtitle">Sign Up for Hangry</h1>
+      <h2 className="h2title">Never go hangry again!</h2>
+      <div className="signuperrors">
         {Object.values(reactErrors).map((error, idx) => <ul key={idx}>{error}</ul>)}
       </div>
       <div>

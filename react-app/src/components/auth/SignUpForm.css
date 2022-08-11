@@ -70,8 +70,21 @@ body {
     margin-bottom: 10px;
 }
 
-.errors {
+.signupformtitle {
+    color: #C2372F;
+    font-family: Helvetica;
+    padding-top: 20px;
+}
+
+.h2title {
+    color: black;
+    font-family: Helvetica;
+}
+
+.signuperrors {
+    display: block;
     color: red;
     font-family: Helvetica;
     font-size: 11px;
+    padding-right: 45px;
 }
