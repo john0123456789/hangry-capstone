@@ -8,6 +8,7 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import { authenticate } from './store/session';
 import CreateBusinessPage from './components/CreateBusinessPage';
 import SingleBusinessPage from './components/SingleBusinessPage';
+import BusinessesPage from './components/BusinessesPage';
 import { getAllBusinessesThunk } from './store/business';
 import SplashPage from './components/SplashPage';
 
@@ -36,6 +37,9 @@ function App() {
         </Route>
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
+        </Route>
+        <Route path='/businesses'>
+          <BusinessesPage/>
         </Route>
         <ProtectedRoute path='/businesses/create'>
           <CreateBusinessPage/>
