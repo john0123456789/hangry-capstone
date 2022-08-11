@@ -1,0 +1,11 @@
+.businesspagebuttons{
+    background-color:#C2372F;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    padding: 15px;
+}
+
+.businesspagebuttons:hover{
+    background-color:red;
+}

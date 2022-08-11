@@ -8,7 +8,7 @@ function EditBusinessModal({business}) {
 
     return (
       <>
-        <button onClick={() => setShowModal(true)}>Edit Business</button>
+        <button className="businesspagebuttons" onClick={() => setShowModal(true)}>Edit Business</button>
         {showModal && (
           <Modal onClose={() => setShowModal(false)} onSubmit={() => setShowModal(false)}>
             <EditBusinessPage business={business} setShowModal={setShowModal}/>

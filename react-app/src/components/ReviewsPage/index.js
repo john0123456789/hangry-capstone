@@ -29,7 +29,6 @@ if (reviews.length === 0) {
             return (
                 <div key={review.id}>
                 <h2>Review by {review.user.username}:</h2>
-                <h2>{review.business_review}</h2>
                 <div>
                     {review.rating === 5 && (
                         <label className="stars">&#9733; &#9733; &#9733; &#9733; &#9733;</label>
@@ -47,6 +46,7 @@ if (reviews.length === 0) {
                          <label className="stars">&#9733;</label>
                     )}
                 </div>
+                <h2>{review.business_review}</h2>
                 {review.user.id === user.id ? (
                 <EditReviewModal business={business} review={review}/>): null }
                 </div>
