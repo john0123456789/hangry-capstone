@@ -29,7 +29,7 @@ function CreateReviewPage({business, setShowModal}) {
 
     return (
         <form className="review-form" onSubmit={createReviewClick}>
-            <h1>Create Review</h1>
+            <h1>Add Review</h1>
             <textarea type="text" className="reviewarea" placeholder="Your Review Here" value={business_review} onChange={(e) => setBusinessReview(e.target.value)}/>
             <div className="star-rating">
                 <input type="radio" id="5star" value="5" name="stars" onChange={(e) => setRating(parseInt(e.target.value, 10))}/>

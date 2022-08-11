@@ -4,6 +4,7 @@ import { getAllBusinessesThunk } from '../../store/business';
 import EditBusinessModal from '../EditBusinessPage/EditBusinessModal'
 import ReviewsPage from "../ReviewsPage";
 import CreateReviewModal from "../CreateReviewPage/CreateReviewModal";
+import './index.css'
 
 
 function SingleBusinessPage() {
@@ -32,9 +33,7 @@ function SingleBusinessPage() {
                         <>
                         <div class="business-container">
                             <h2> {business.name} </h2>
-                            <h2> {business.address} </h2>
-                            <h2> {business.city} </h2>
-                            <h2> {business.state} </h2>
+                            <h2> {business.address}, {business.city}, {business.zipcode}, {business.state} </h2>
                             <h2> {business.phone_number} </h2>
                             <h2> {business.website} </h2>
                             {business.user_id === user.id ? (
