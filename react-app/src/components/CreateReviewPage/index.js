@@ -6,6 +6,9 @@ import './index.css'
 function CreateReviewPage({business, setShowModal}) {
     const dispatch = useDispatch();
 
+    let errorsObj = {content: ''}
+    const [reactErrors, setReactErrors] = useState(errorsObj);
+
     const user = useSelector(state => state.session.user)
 
     const [user_id] = useState(user.id);
@@ -16,6 +19,23 @@ function CreateReviewPage({business, setShowModal}) {
     const createReviewClick = async (e) => {
         e.preventDefault();
 
+        let error = false;
+        errorsObj = {...errorsObj};
+        if(business_review === '') {
+            errorsObj.business_review = "Review cannot be empty."
+            error = true;
+        } else if(business_review.length < 3 || business_review.length > 250) {
+            errorsObj.business_review = "Review must be greater than 3 characters and under 250."
+            error = true;
+        }
+        if(rating === '') {
+            errorsObj.rating = "Please select a rating."
+            error = true;
+        }
+
+        setReactErrors(errorsObj);
+
+        if(!error) {
         const createReview = {
             user_id,
             business_id,
@@ -26,10 +46,14 @@ function CreateReviewPage({business, setShowModal}) {
         await dispatch(createReviewThunk(createReview))
         setShowModal(false);
     }
+}
 
     return (
         <form className="review-form" onSubmit={createReviewClick}>
             <h1>Add Review</h1>
+            <div className="reviewerrors">
+                {Object.values(reactErrors).map((error, idx) => <ul key={idx}>{error}</ul>)}
+            </div>
             <textarea type="text" className="reviewarea" placeholder="Your Review Here" value={business_review} onChange={(e) => setBusinessReview(e.target.value)}/>
             <div className="star-rating">
                 <input type="radio" id="5star" value="5" name="stars" onChange={(e) => setRating(parseInt(e.target.value, 10))}/>

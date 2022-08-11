@@ -38,6 +38,14 @@
   border-radius:10px;
 }
 
+.editreviewerrors {
+  display: block;
+  color: red;
+  font-family: Helvetica;
+  font-size: 11px;
+  padding-right: 45px;
+}
+
 .editstar-rating {
     border: gray 1px solid;
     display: flex;

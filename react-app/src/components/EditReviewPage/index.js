@@ -6,6 +6,10 @@ import './index.css'
 function EditReviewPage({review, business, setShowModal}) {
     const dispatch = useDispatch();
 
+    let errorsObj = {content: ''}
+    const [reactErrors, setReactErrors] = useState(errorsObj);
+
+
     const user = useSelector(state => state.session.user)
     const reviews = useSelector((state) => Object.values(state.reviews))
 
@@ -19,6 +23,23 @@ function EditReviewPage({review, business, setShowModal}) {
     const updateReviewClick = async (e) => {
         e.preventDefault();
 
+        let error = false;
+        errorsObj = {...errorsObj};
+        if(business_review === '') {
+            errorsObj.business_review = "Review cannot be empty."
+            error = true;
+        } else if(business_review.length < 3 || business_review.length > 250) {
+            errorsObj.business_review = "Review must be greater than 3 characters and under 250."
+            error = true;
+        }
+        if(rating === '') {
+            errorsObj.rating = "Please select a rating."
+            error = true;
+        }
+
+        setReactErrors(errorsObj);
+
+        if(!error) {
         const updateReview = {
             user_id,
             business_id,
@@ -30,6 +51,7 @@ function EditReviewPage({review, business, setShowModal}) {
         await dispatch(getReviewsThunk(business.id))
         setShowModal(false);
     }
+}
 
     const deleteReviewClick = async (e) => {
         e.preventDefault()
@@ -44,6 +66,9 @@ function EditReviewPage({review, business, setShowModal}) {
     return (
         <form className="editreview-form" onSubmit={updateReviewClick}>
             <h1>Edit Review</h1>
+            <div className="editreviewerrors">
+                {Object.values(reactErrors).map((error, idx) => <ul key={idx}>{error}</ul>)}
+            </div>
             <textarea type="text" className="editreviewarea" placeholder="Your Review Here" value={business_review} onChange={(e) => setBusinessReview(e.target.value)}/>
             <div className="editstar-rating">
                     <input type="radio" id="5star" value="5" name="stars" onChange={(e) => setRating(parseInt(e.target.value, 10))}/>
