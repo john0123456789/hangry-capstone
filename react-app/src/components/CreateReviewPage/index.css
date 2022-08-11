@@ -28,8 +28,6 @@
   text-transform:uppercase;
   cursor:pointer;
   border:none;
-  padding-bottom:10px;
-  padding-top:10px;
 }
 .createreviewbutton:hover {
   background-color: #d4d4d4;
@@ -37,8 +35,6 @@
   padding:0.25em 1em;
   margin: 0 0.2em 0.2em 0;
   border-radius:10px;
-  margin-top: 5px;
-  margin-bottom: 10px;
 }
 
 .star-rating {

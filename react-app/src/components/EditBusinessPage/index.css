@@ -1,4 +1,4 @@
-.signupform {
+.editbusiness-form {
     background-color: rgb(255, 255, 255);
     display: block;
     width: min-content;
@@ -6,10 +6,9 @@
     margin: auto;
     border-radius: 10px;
     text-align: center;
-    padding: 20px;
 }
 
-.inputs {
+.editinputs {
     padding:12px;
     font-size:12px;
     margin-bottom: 5px;
@@ -19,10 +18,10 @@
     font-family:Helvetica;
     margin-left:10px;
     margin-right:10px;
-
+    width: 175px;
 }
 
-.inputfirst{
+.editinputfirst{
     padding:12px;
     font-size:12px;
     margin-bottom: 5px;
@@ -32,7 +31,8 @@
     font-family:Helvetica;
     margin-left:10px;
     margin-right:10px;
-    margin-top:20px
+    margin-top:20px;
+    width: 175px;
 }
 
 body {
@@ -43,7 +43,7 @@ body {
     margin:-.5px
 }
 
-.signupbutton {
+.editbutton {
     display:inline-block;
     padding:0.25em 1em;
     margin: 0 0.2em 0.2em 0;
@@ -57,55 +57,31 @@ body {
     text-transform:uppercase;
     cursor:pointer;
     border:none;
+    padding-bottom:10px;
+    padding-top:10px;
+    margin-bottom: 30px;
 }
 
-.signupbutton:hover {
+.editbutton:hover {
     background-color: #d4d4d4;
     border:none;
     padding:0.25em 1em;
     margin: 0 0.2em 0.2em 0;
     border-radius:10px;
+    margin-top: 7px;
+    margin-bottom: 10px;
 }
 
-.signupformtitle {
+.editbusinesstitle {
     color: #C2372F;
     font-family: Helvetica;
+    padding-top: 20px;
 }
 
-.h2title {
-    color: black;
-    font-family: Helvetica;
-}
-
-.signuperrors {
+.editbusinesserrors {
     display: block;
     color: red;
     font-family: Helvetica;
     font-size: 11px;
     padding-right: 45px;
-}
-
-.navbutton {
-    background-color: transparent;
-    cursor: pointer;
-    border: white 1px solid;
-    border-radius: 2px;
-    color: white;
-    position: relative;
-    left: 90%;
-    font-size: 18px;
-    padding: 5px;
-    position: relative;
-    bottom: 35px;
-}
-
-.navbutton:hover {
-    background-color: #d4d4d4;
-    border:white 1px solid;
-}
-
-.signupbackenderrors {
-    color: red;
-    font-family: Helvetica;
-    font-size: 11px;
 }
