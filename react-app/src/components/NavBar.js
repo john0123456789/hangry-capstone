@@ -38,7 +38,7 @@ const NavBar = () => {
           <img src="https://i.imgur.com/dxJVLEP.png" alt="logo" className="hangry-logo" onClick={homeClick}/>
         </div>
         <div>
-          <button type="button" className="userbuttons" onClick={createBusiness}><FiPlusSquare size="30px"/><span className="tooltiptext">Create Business</span></button>
+          <button type="button" className="userbuttons" onClick={createBusiness}><FiPlusSquare size="30px"/><span className="tooltiptext">Add Business</span></button>
           <button type="button" className="userbuttons"><LogoutButton/><span className="tooltiptext2">Logout</span></button>
         </div>
       </div>

@@ -38,9 +38,9 @@ function App() {
         <Route path='/sign-up' exact={true}>
           <SignUpForm />
         </Route>
-        <Route path='/businesses/create'>
+        <ProtectedRoute path='/businesses/create'>
           <CreateBusinessPage/>
-        </Route>
+        </ProtectedRoute>
         <Route path='/business/:id'>
           <SingleBusinessPage/>
         </Route>

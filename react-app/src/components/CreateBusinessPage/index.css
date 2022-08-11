@@ -1,15 +1,14 @@
-.loginform {
+.business-form {
     background-color: rgb(255, 255, 255);
     display: block;
     width: min-content;
     height: auto;
     margin: auto;
-    /* border: 1px solid black; */
     border-radius: 10px;
     text-align: center;
 }
 
-.secondinput {
+.inputs {
     padding:12px;
     font-size:12px;
     margin-bottom: 5px;
@@ -19,9 +18,10 @@
     font-family:Helvetica;
     margin-left:10px;
     margin-right:10px;
-
+    width: 175px;
 }
-.firstinput{
+
+.inputfirst{
     padding:12px;
     font-size:12px;
     margin-bottom: 5px;
@@ -31,7 +31,8 @@
     font-family:Helvetica;
     margin-left:10px;
     margin-right:10px;
-    margin-top:20px
+    margin-top:20px;
+    width: 175px;
 }
 
 body {
@@ -42,7 +43,7 @@ body {
     margin:-.5px
 }
 
-.loginbutton {
+.createbutton {
     display:inline-block;
     padding:0.25em 1em;
     margin: 0 0.2em 0.2em 0;
@@ -60,23 +61,26 @@ body {
     padding-top:10px;
 }
 
-.loginbutton:hover {
+.createbutton:hover {
     background-color: #d4d4d4;
     border:none;
     padding:0.25em 1em;
     margin: 0 0.2em 0.2em 0;
-    border-radius:10px
+    border-radius:10px;
+    margin-top: 7px;
+    margin-bottom: 10px;
 }
 
-.loginformtitle {
+.addbusinesstitle {
     color: #C2372F;
     font-family: Helvetica;
     padding-top: 20px;
 }
 
-.loginerrors {
+.businesserrors {
     display: block;
     color: red;
     font-family: Helvetica;
     font-size: 11px;
+    padding-right: 45px;
 }

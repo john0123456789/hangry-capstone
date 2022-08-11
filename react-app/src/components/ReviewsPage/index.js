@@ -2,6 +2,7 @@ import { getReviewsThunk } from "../../store/review";
 import { useDispatch, useSelector} from "react-redux";
 import { useEffect } from "react";
 import EditReviewModal from "../EditReviewPage/EditReviewModal"
+import './index.css'
 
 
 function ReviewsPage({business}) {
@@ -23,13 +24,29 @@ if (reviews.length === 0) {
     return (
         <>
     <div>
-        <h1>REVIEWS PAGE</h1>
+        <h1>Reviews</h1>
         { reviews.map(review => {
             return (
                 <div key={review.id}>
-                <h2>Review by {review.user.username} for {review.business.name}:</h2>
+                <h2>Review by {review.user.username}:</h2>
                 <h2>{review.business_review}</h2>
-                <h2>Rating: {review.rating}/5</h2>
+                <div>
+                    {review.rating === 5 && (
+                        <label className="stars">&#9733; &#9733; &#9733; &#9733; &#9733;</label>
+                    )}
+                    {review.rating === 4 && (
+                        <label className="stars">&#9733; &#9733; &#9733; &#9733;</label>
+                     )}
+                    {review.rating === 3 && (
+                        <label className="stars">&#9733; &#9733; &#9733;</label>
+                    )}
+                    {review.rating === 2 && (
+                        <label className="stars">&#9733; &#9733;</label>
+                    )}
+                    {review.rating === 1 && (
+                         <label className="stars">&#9733;</label>
+                    )}
+                </div>
                 {review.user.id === user.id ? (
                 <EditReviewModal business={business} review={review}/>): null }
                 </div>
