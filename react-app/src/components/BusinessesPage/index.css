@@ -10,7 +10,12 @@
 
 .name{
     text-decoration: none;
-    color: black;
+    color: teal;
     font-size:25px;
     position:relative;
+}
+
+.name:hover{
+    color: teal;
+    text-decoration:underline;
 }
