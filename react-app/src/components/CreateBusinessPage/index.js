@@ -110,18 +110,24 @@ function CreateBusinessPage({setShowModal}) {
     return (
         <form className="business-form">
             <h1 className="addbusinesstitle">Add your business!</h1>
+            <h3 className="createbusinessrequire">* field required</h3>
             <div className="businesserrors">
                 {Object.values(reactErrors).map((error, idx) => <ul key={idx}>{error}</ul>)}
             </div>
+            <label className="createbusinessrequire">*</label>
             <label className="addbusiness-labels">Business Name</label>
             <input type="text" className="inputfirst" placeholder="Business Name" value={name} onChange={(e) => setName(e.target.value)}/>
+            <label className="createbusinessrequire">*</label>
             <label className="addbusiness-labels">Street Address</label>
             <input type="text" className="inputs" placeholder="Street Address i.e. 123 Apple St" value={address} onChange={(e) => setAddress(e.target.value)}/>
+            <label className="createbusinessrequire">*</label>
             <label className="addbusiness-labels">Zipcode</label>
             <input type="text" className="inputs" placeholder="Zipcode i.e. 12345" value={zipcode} onChange={(e) => setZipcode(e.target.value)}/>
+            <label className="createbusinessrequire">*</label>
             <label className="addbusiness-labels">City</label>
             <input type="text" className="inputs" placeholder="City" value={city} onChange={(e) => setCity(e.target.value)}/>
             <div>
+                <label className="createbusinessrequire">*</label>
                 <label className="addbusiness-labels">State</label>
             </div>
             <select className="inputs" value={state} onChange={(e) => setState(e.target.value)}>
@@ -178,8 +184,10 @@ function CreateBusinessPage({setShowModal}) {
               <option value="WI">Wisconsin</option>
               <option value="WY">Wyoming</option>
             </select>
+            <label className="createbusinessrequire">*</label>
             <label className="addbusiness-labels">Phone Number</label>
             <input type="text" className="inputs" placeholder="Phone Number i.e. 1234567891" value={phone_number} onChange={(e) => setPhoneNumber(e.target.value)}/>
+            <label className="createbusinessrequire">*</label>
             <label className="addbusiness-labels">Website URL</label>
             <input type="text" className="inputs" placeholder="Website URL i.e. https://abc.com" value={website} onChange={(e) => setWebsite(e.target.value)}/>
             <button type="submit" className="createbutton" onClick={handleBusinessSubmit}>Add Business</button>

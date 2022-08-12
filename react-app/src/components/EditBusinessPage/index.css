@@ -89,3 +89,9 @@ body {
 .editbusiness-labels {
     font-family: Helvetica;
 }
+
+.editbusinessrequire {
+    color: red;
+    font-family: Helvetica;
+    font-size: 15px;
+}

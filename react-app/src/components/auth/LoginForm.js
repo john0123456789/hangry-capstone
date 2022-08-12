@@ -64,6 +64,7 @@ const LoginForm = ({setShowModal}) => {
   return (
     <form className="loginform" onSubmit={onLogin}>
       <h1 className="loginformtitle">Log in to Hangry</h1>
+      <h3 className="loginrequire">* field required</h3>
       <div className="loginerrors1">
         {Object.values(reactErrors).map((error, idx) => <ul key={idx}>{error}</ul>)}
       </div>
@@ -73,6 +74,7 @@ const LoginForm = ({setShowModal}) => {
         ))}
       </div>
       <div>
+      <label className="loginrequire">*</label>
       <label className="login-labels">Email</label>
         <input
           name='email'
@@ -84,6 +86,7 @@ const LoginForm = ({setShowModal}) => {
         />
       </div>
       <div>
+      <label className="loginrequire">*</label>
       <label className="login-labels">Password</label>
         <input
           name='password'

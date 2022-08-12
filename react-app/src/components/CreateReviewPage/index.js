@@ -51,11 +51,14 @@ function CreateReviewPage({business, setShowModal}) {
     return (
         <form className="review-form" onSubmit={createReviewClick}>
             <h1>Add Review</h1>
+            <h3 className="addreviewrequire">* field required</h3>
             <div className="reviewerrors">
                 {Object.values(reactErrors).map((error, idx) => <ul key={idx}>{error}</ul>)}
             </div>
+            <label className="addreviewrequire">*</label>
             <label className="createreview-labels">Leave your review below!</label>
             <textarea type="text" className="reviewarea" placeholder="Your Review Here" value={business_review} onChange={(e) => setBusinessReview(e.target.value)}/>
+            <label className="addreviewrequire">*</label>
             <label className="createreview-labels">What did you think of this business?</label>
             <div className="star-rating">
                 <input type="radio" id="5star" value="5" name="stars" onChange={(e) => setRating(parseInt(e.target.value, 10))}/>
