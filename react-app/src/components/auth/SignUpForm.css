@@ -32,7 +32,6 @@
     font-family:Helvetica;
     margin-left:10px;
     margin-right:10px;
-    margin-top:20px
 }
 
 body {
@@ -109,4 +108,8 @@ body {
     color: red;
     font-family: Helvetica;
     font-size: 11px;
+}
+
+.signup-labels {
+    font-family: Helvetica;
 }

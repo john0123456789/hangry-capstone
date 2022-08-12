@@ -25,6 +25,9 @@ function EditBusinessPage({business, setShowModal}) {
         if(name === '') {
             errorsObj.name = "Business Name field cannot be empty.";
             error = true;
+        } else if(name.length < 2 || name.length > 35) {
+        errorsObj.name = "Business Name must be greater than 2 characters and shorter than 35."
+        error = true;
         }
         if(address === '') {
             errorsObj.address = "Address field cannot be empty.";
@@ -43,8 +46,8 @@ function EditBusinessPage({business, setShowModal}) {
         if(city === '') {
             errorsObj.city = "City field cannot be empty."
             error = true;
-        } else if(city.length < 3) {
-            errorsObj.city = "City name must be at least 3 characters long."
+        } else if(city.length < 3 || city.length > 37) {
+            errorsObj.city = "City name must greater than 2 characters and shorter than 37."
             error = true;
         }
         if(!state) {
@@ -101,10 +104,15 @@ function EditBusinessPage({business, setShowModal}) {
             <div className="editbusinesserrors">
                 {Object.values(reactErrors).map((error, idx) => <ul key={idx}>{error}</ul>)}
             </div>
+            <label className="editbusiness-labels">Business Name</label>
             <input type="text" className="editinputfirst" placeholder="Business Name" value={name} onChange={(e) => setName(e.target.value)}/>
+            <label className="editbusiness-labels">Street Address</label>
             <input type="text" className="editinputs" placeholder="Street Address i.e. 123 Apple St" value={address} onChange={(e) => setAddress(e.target.value)}/>
+            <label className="editbusiness-labels">Zipcode</label>
             <input type="text" className="editinputs" placeholder="Zipcode i.e. 12345" value={zipcode} onChange={(e) => setZipcode(e.target.value)}/>
+            <label className="editbusiness-labels">City</label>
             <input type="text" className="editinputs" placeholder="City" value={city} onChange={(e) => setCity(e.target.value)}/>
+            <label className="editbusiness-labels">State</label>
             <select className="editinputs" value={state} onChange={(e) => setState(e.target.value)}>
               <option>Select State</option>
               <option value="AL">Alabama</option>
@@ -159,7 +167,9 @@ function EditBusinessPage({business, setShowModal}) {
               <option value="WI">Wisconsin</option>
               <option value="WY">Wyoming</option>
             </select>
+            <label className="editbusiness-labels">Phone Number</label>
             <input type="text" className="editinputs" placeholder="Phone Number i.e. 1234567891" value={phone_number} onChange={(e) => setPhoneNumber(e.target.value)}/>
+            <label className="editbusiness-labels">Website URL</label>
             <input type="text" className="editinputs" placeholder="Website URL i.e. https://abc.com" value={website} onChange={(e) => setWebsite(e.target.value)}/>
             <button type="submit" className="editbutton">Save Changes</button>
             <button className="editbutton"onClick={(e) => deleteBusinessClick(e)}>Delete</button>

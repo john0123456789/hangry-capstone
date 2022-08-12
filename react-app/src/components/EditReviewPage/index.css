@@ -80,3 +80,7 @@
 .editstar-rating label:hover~label {
     color: #C2372F;
   }
+
+.editreview-labels {
+  font-family: Helvetica;
+}

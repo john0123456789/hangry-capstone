@@ -22,7 +22,7 @@
 
 }
 .firstinput{
-    padding:12px;
+    padding: 12px;
     font-size:12px;
     margin-bottom: 5px;
     border-radius:15px;
@@ -31,7 +31,6 @@
     font-family:Helvetica;
     margin-left:10px;
     margin-right:10px;
-    margin-top:20px
 }
 
 body {
@@ -81,6 +80,14 @@ body {
     font-size: 11px;
 }
 
+.loginerrors1 {
+    display: block;
+    color: red;
+    font-family: Helvetica;
+    font-size: 11px;
+    padding-right: 45px;
+}
+
 .navbutton {
     background-color: transparent;
     cursor: pointer;
@@ -98,4 +105,8 @@ body {
 .navbutton:hover {
     background-color: red;
     border:white 1px solid;
+}
+
+.login-labels {
+    font-family: Helvetica;
 }

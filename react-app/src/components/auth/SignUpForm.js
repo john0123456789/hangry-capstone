@@ -32,8 +32,9 @@ const SignUpForm = ({setShowModal}) => {
     if(email === '') {
       errorsObj.email = "Email field cannot be empty.";
       error = true;
-    } else if (!email.includes("@")) {
+    } else if (!email.includes("@") && !email.includes(".")) {
       errorsObj.email = "Please input a valid email address."
+      error = true;
     }
     if(password === '') {
       errorsObj.password = "Password field cannot be empty.";
@@ -96,6 +97,7 @@ const SignUpForm = ({setShowModal}) => {
         ))}
       </div>
       <div>
+        <label className="signup-labels">Username</label>
         <input
           type='text'
           className="inputfirst"
@@ -106,6 +108,7 @@ const SignUpForm = ({setShowModal}) => {
         ></input>
       </div>
       <div>
+        <label className="signup-labels">Email</label>
         <input
           type='text'
           className="inputs"
@@ -116,6 +119,7 @@ const SignUpForm = ({setShowModal}) => {
         ></input>
       </div>
       <div>
+        <label className="signup-labels">Password</label>
         <input
           type='password'
           className="inputs"
@@ -126,6 +130,7 @@ const SignUpForm = ({setShowModal}) => {
         ></input>
       </div>
       <div>
+        <label className="signup-labels">Confirm Password</label>
         <input
           type='password'
           className="inputs"
