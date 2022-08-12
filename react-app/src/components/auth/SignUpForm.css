@@ -113,3 +113,9 @@ body {
 .signup-labels {
     font-family: Helvetica;
 }
+
+.signuprequire {
+    color: red;
+    font-family: Helvetica;
+    font-size: 15px;
+}

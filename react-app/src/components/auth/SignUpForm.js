@@ -32,7 +32,7 @@ const SignUpForm = ({setShowModal}) => {
     if(email === '') {
       errorsObj.email = "Email field cannot be empty.";
       error = true;
-    } else if (!email.includes("@") && !email.includes(".")) {
+    } else if (!email.includes("@") || !email.includes(".")) {
       errorsObj.email = "Please input a valid email address."
       error = true;
     }
@@ -88,6 +88,7 @@ const SignUpForm = ({setShowModal}) => {
     <form className="signupform" onSubmit={onSignUp}>
       <h1 className="signupformtitle">Sign Up for Hangry</h1>
       <h2 className="h2title">Never go hangry again!</h2>
+      <h3 className="signuprequire">* field required</h3>
       <div className="signuperrors">
         {Object.values(reactErrors).map((error, idx) => <ul key={idx}>{error}</ul>)}
       </div>
@@ -97,6 +98,7 @@ const SignUpForm = ({setShowModal}) => {
         ))}
       </div>
       <div>
+        <label className="signuprequire">*</label>
         <label className="signup-labels">Username</label>
         <input
           type='text'
@@ -108,6 +110,7 @@ const SignUpForm = ({setShowModal}) => {
         ></input>
       </div>
       <div>
+        <label className="signuprequire">*</label>
         <label className="signup-labels">Email</label>
         <input
           type='text'
@@ -119,6 +122,7 @@ const SignUpForm = ({setShowModal}) => {
         ></input>
       </div>
       <div>
+        <label className="signuprequire">*</label>
         <label className="signup-labels">Password</label>
         <input
           type='password'
@@ -130,6 +134,7 @@ const SignUpForm = ({setShowModal}) => {
         ></input>
       </div>
       <div>
+        <label className="signuprequire">*</label>
         <label className="signup-labels">Confirm Password</label>
         <input
           type='password'
@@ -138,7 +143,6 @@ const SignUpForm = ({setShowModal}) => {
           name='repeat_password'
           onChange={updateRepeatPassword}
           value={repeatPassword}
-          required={true}
         ></input>
       </div>
       <button type='submit' className="signupbutton">Sign Up</button>

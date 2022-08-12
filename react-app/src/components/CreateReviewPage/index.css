@@ -81,6 +81,12 @@
     color: #C2372F;
   }
 
-  .createreview-labels {
-    font-family: Helvetica;
-  }
+.createreview-labels {
+  font-family: Helvetica;
+}
+
+.addreviewrequire {
+  color: red;
+  font-family: Helvetica;
+  font-size: 15px;
+}

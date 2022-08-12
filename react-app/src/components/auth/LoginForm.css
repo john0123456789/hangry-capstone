@@ -110,3 +110,9 @@ body {
 .login-labels {
     font-family: Helvetica;
 }
+
+.loginrequire {
+    color: red;
+    font-family: Helvetica;
+    font-size: 15px;
+}

@@ -89,3 +89,9 @@ body {
 .addbusiness-labels {
     font-family: Helvetica;
 }
+
+.createbusinessrequire {
+    color: red;
+    font-family: Helvetica;
+    font-size: 15px;
+}
