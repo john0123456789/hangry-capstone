@@ -5,6 +5,10 @@ import { login } from '../../store/session';
 import './LoginForm.css'
 
 const LoginForm = ({setShowModal}) => {
+
+  let errorsObj = {content: ''};
+  const [reactErrors, setReactErrors] = useState(errorsObj)
+
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -13,12 +17,30 @@ const LoginForm = ({setShowModal}) => {
 
   const onLogin = async (e) => {
     e.preventDefault();
+
+    let error = false;
+    errorsObj = {...errorsObj};
+    if(email === '') {
+      errorsObj.email = "Email field cannot be empty.";
+      error = true;
+    } else if(!email.includes("@") && !email.includes(".")) {
+      errorsObj.email = "Please input a valid email address."
+      error = true;
+    }
+    if(password === '') {
+      errorsObj.password = "Password field cannot be empty.";
+      error = true;
+    }
+
+    setReactErrors(errorsObj);
+
+    if(!error) {
     const data = await dispatch(login(email, password));
     if (data) {
       setErrors(data);
     }
   };
-
+}
   const updateEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -42,12 +64,16 @@ const LoginForm = ({setShowModal}) => {
   return (
     <form className="loginform" onSubmit={onLogin}>
       <h1 className="loginformtitle">Log in to Hangry</h1>
+      <div className="loginerrors1">
+        {Object.values(reactErrors).map((error, idx) => <ul key={idx}>{error}</ul>)}
+      </div>
       <div className="loginerrors">
         {errors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
       </div>
       <div>
+      <label className="login-labels">Email</label>
         <input
           name='email'
           type='text'
@@ -58,6 +84,7 @@ const LoginForm = ({setShowModal}) => {
         />
       </div>
       <div>
+      <label className="login-labels">Password</label>
         <input
           name='password'
           type='password'

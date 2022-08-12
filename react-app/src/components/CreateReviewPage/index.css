@@ -80,3 +80,7 @@
 .star-rating label:hover~label {
     color: #C2372F;
   }
+
+  .createreview-labels {
+    font-family: Helvetica;
+  }

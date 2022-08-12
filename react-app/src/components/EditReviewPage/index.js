@@ -69,7 +69,9 @@ function EditReviewPage({review, business, setShowModal}) {
             <div className="editreviewerrors">
                 {Object.values(reactErrors).map((error, idx) => <ul key={idx}>{error}</ul>)}
             </div>
+            <label className="editreview-labels">Leave your review below!</label>
             <textarea type="text" className="editreviewarea" placeholder="Your Review Here" value={business_review} onChange={(e) => setBusinessReview(e.target.value)}/>
+            <label className="editreview-labels">What did you think about this business?</label>
             <div className="editstar-rating">
                     <input type="radio" id="5star" value="5" name="stars" onChange={(e) => setRating(parseInt(e.target.value, 10))}/>
                     <label htmlFor="5star">&#9733;</label>
