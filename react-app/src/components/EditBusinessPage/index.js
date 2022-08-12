@@ -112,7 +112,9 @@ function EditBusinessPage({business, setShowModal}) {
             <input type="text" className="editinputs" placeholder="Zipcode i.e. 12345" value={zipcode} onChange={(e) => setZipcode(e.target.value)}/>
             <label className="editbusiness-labels">City</label>
             <input type="text" className="editinputs" placeholder="City" value={city} onChange={(e) => setCity(e.target.value)}/>
-            <label className="editbusiness-labels">State</label>
+            <div>
+                <label className="editbusiness-labels">State</label>
+            </div>
             <select className="editinputs" value={state} onChange={(e) => setState(e.target.value)}>
               <option>Select State</option>
               <option value="AL">Alabama</option>

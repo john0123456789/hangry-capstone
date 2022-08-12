@@ -96,7 +96,7 @@ function CreateBusinessPage({setShowModal}) {
             if(newBusiness) {
                 dispatch(clearReviews())
                 setShowModal(false)
-                history.push('/')
+                history.push(`/business/${newBusiness.id}`)
             }
         }
     }
