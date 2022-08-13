@@ -11,6 +11,7 @@ import SingleBusinessPage from './components/SingleBusinessPage';
 import BusinessesPage from './components/BusinessesPage';
 import { getAllBusinessesThunk } from './store/business';
 import SplashPage from './components/SplashPage';
+import Footer from './components/Footer';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -29,6 +30,7 @@ function App() {
   }
 
   return (
+    <>
     <BrowserRouter>
       <NavBar />
       <Switch>
@@ -52,6 +54,8 @@ function App() {
         </Route>
       </Switch>
     </BrowserRouter>
+    <Footer />
+    </>
   );
 }
 
