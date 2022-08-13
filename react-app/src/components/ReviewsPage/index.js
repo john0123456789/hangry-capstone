@@ -9,7 +9,9 @@ function ReviewsPage({business}) {
     const dispatch = useDispatch();
 
     const user = useSelector((state) => state.session.user)
-    const reviews = useSelector((state) => Object.values(state.reviews))
+    const business_id = business.id
+    const reviews = useSelector((state) => Object.values(state.reviews).filter(reviews => reviews.business_id === business_id))
+    const sortReviews = reviews.sort().reverse()
 
 useEffect(() => {
     dispatch(getReviewsThunk(business.id));
@@ -25,7 +27,7 @@ if (reviews.length === 0) {
         <>
     <div>
         <h1>Reviews</h1>
-        { reviews.map(review => {
+        { sortReviews.map(review => {
             return (
                 <div key={review.id}>
                 <h2>Review by {review.user.username}:</h2>
@@ -45,6 +47,9 @@ if (reviews.length === 0) {
                     {review.rating === 1 && (
                          <label className="stars">&#9733;</label>
                     )}
+                    <div>
+                        {new Date(review.created_at).toLocaleDateString('en-US')}
+                    </div>
                 </div>
                 <h2>{review.business_review}</h2>
                 {review.user.id === user.id ? (
