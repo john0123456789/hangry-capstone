@@ -1,0 +1,34 @@
+
+#footer-container {
+    font-size: 10px;
+    background-color:white;
+    border-top:1px solid rgb(218, 218, 218);
+    display: flex;
+    flex-direction: row;
+    font-family:helvetica;
+    align-items: center;
+    justify-content:space-evenly;
+}
+
+#footer {
+    font-family:helvetica;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+
+}
+
+.feet {
+    cursor: pointer;
+    font-family:helvetica;
+    text-decoration:none;
+    color:black;
+    padding:10px;
+    font-size:15px;
+    font-weight:lighter
+}
+
+.feet:hover {
+    color: #C2372F;
+}
