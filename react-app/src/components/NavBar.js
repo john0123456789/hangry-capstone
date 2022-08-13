@@ -1,24 +1,28 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import LogoutButton from './auth/LogoutButton';
 import CreateBusinessModal from './CreateBusinessPage/CreateBusinessModal';
 import LoginFormModal from './auth/LoginFormModal';
 import SignUpFormModal from './auth/SignUpFormModal';
+import { clearReviews } from '../store/review';
 import { TbListSearch } from 'react-icons/tb'
 import './NavBar.css'
 
 const NavBar = () => {
+  const dispatch = useDispatch();
   const user = useSelector(state => state.session.user);
   const history = useHistory();
 
   const homeClick = (e) => {
     e.preventDefault();
+    dispatch(clearReviews());
     history.push('/')
   }
 
   const browseClick = (e) => {
     e.preventDefault();
+    dispatch(clearReviews());
     history.push('/businesses')
   }
 
