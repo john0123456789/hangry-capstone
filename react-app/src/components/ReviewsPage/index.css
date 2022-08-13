@@ -1,4 +1,11 @@
 .stars {
     color: #C2372F;
     font-size: 2em;
+    margin-left: -10px;
+}
+
+.review-date {
+    font-weight: lighter;
+    font-size: 15px;
+    margin-left: 10px;
 }
