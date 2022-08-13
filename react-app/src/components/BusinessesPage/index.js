@@ -21,7 +21,7 @@ return (
         { businesses.map(business =>{
             return (
                 <div key={business.id}>
-                <NavLink className="name" to={`/business/${business.id}`} target="_blank" rel="noreferrer noopener"><b>{business.name}</b></NavLink>
+                <NavLink className="name" to={`/business/${business.id}`}><b>{business.name}</b></NavLink>
                 <h2>{business.address}, {business.city}, {business.state} {business.zipcode}</h2>
                 <h2>{business.phone_number}</h2>
                 <h2>{business.website}</h2>
