@@ -1,10 +1,12 @@
 import { updateBusinessThunk, getAllBusinessesThunk, deleteBusinessThunk } from "../../store/business";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { useState } from "react";
 import './index.css'
 
 function EditBusinessPage({business, setShowModal}) {
     const dispatch = useDispatch();
+    const history = useHistory();
 
     let errorsObj = {content: ''}
     const [reactErrors, setReactErrors] = useState(errorsObj);
@@ -101,6 +103,7 @@ function EditBusinessPage({business, setShowModal}) {
         e.preventDefault()
         dispatch(deleteBusinessThunk(business.id));
         setShowModal(false);
+        history.push('/businesses')
     }
 
     return (
