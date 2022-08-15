@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector} from "react-redux";
 import { getReviewsThunk } from "../../store/review";
+import './index.css'
 
 function StarRating({business}) {
     const dispatch = useDispatch();
@@ -44,8 +45,14 @@ function StarRating({business}) {
 
     return (
         <>
-            <img className="total-star-rating" src={starImg}></img>
-            <h1 className="review-length">{reviews.length} reviews</h1>
+        <div className="total-star-rating">
+            <div className="star-img">
+                <img src={starImg}></img>
+            </div>
+            <a className="reviews-length">
+                {reviews.length} reviews
+            </a>
+        </div>
         </>
     )
 }

@@ -1,21 +1,68 @@
+.main-container {
+    display: block;
+    margin: auto;
+    height: auto;
+    width: 30%;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
 .business-page {
-    display: grid;
-    height: 500px;
-    width: 300px;
-    font-size: 15px;
+    display: block;
+    margin: auto;
+    height: auto;
+    width: auto;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;
-    border-radius: 30px;
 }
 
-.name{
+.business-page-header {
+    font-size: 50px;
+    color: #C2372F;
+    text-align: center;
+}
+
+.navlink-container {
     text-decoration: none;
-    color: teal;
+}
+
+.business-container {
+    border: 1px solid rgba(218, 218, 218, 0.688);
+    border-radius: 1px;
+}
+
+.business-container:hover {
+    box-shadow: 10px 5px 5px rgb(235, 235, 235)
+}
+
+.name {
+    text-decoration: none;
+    color: black;
     font-size:25px;
     position:relative;
+    padding-top: 5px;
+    padding-bottom: 10px;
 }
 
-.name:hover{
-    color: teal;
+.name:hover {
     text-decoration:underline;
+}
+
+.businesses-btag {
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.reviews-length {
+    font-size: 20px;
+    font-weight: lighter;
+    color: black;
+}
+
+.businesses-total-review {
+    color: black;
+}
+
+.businesses-info {
+    color: black;
 }

@@ -19,20 +19,24 @@ useEffect(() => {
 
 return (
     <>
-    <div className="business-page">
-        <h1>Hangry? Check These Businesses Out!</h1>
-        { businesses.map(business =>{
-            return (
-                <div key={business.id}>
-                <NavLink className="name" to={`/business/${business.id}`}><b>{business.name}</b></NavLink>
-                <StarRating business={business}/>
-                <h2>{business.address}, {business.city}, {business.state} {business.zipcode}</h2>
-                <h2>{business.phone_number}</h2>
-                <h2>{business.website}</h2>
-                </div>
-            )
-        })}
-    </div>
+        <h1 className="business-page-header">Hangry? Check These Businesses Out!</h1>
+        <div className="business-page">
+            { businesses.map(business =>{
+                return (
+                    <div className="main-container">
+                        <NavLink className="navlink-container" to={`/business/${business.id}`}>
+                            <div className="business-container" key={business.id}>
+                            <NavLink className="name" to={`/business/${business.id}`}><b className="businesses-btag">{business.name}</b></NavLink>
+                            <StarRating business={business}/>
+                            <h2 className="businesses-info">{business.address}, {business.city}, {business.state} {business.zipcode}</h2>
+                            <h2 className="businesses-info">{business.phone_number}</h2>
+                            <h2 className="businesses-info">{business.website}</h2>
+                            </div>
+                        </NavLink>
+                    </div>
+                    )
+            })}
+        </div>
     </>
   );
 }
