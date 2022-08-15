@@ -36,7 +36,10 @@ function CreateBusinessPage({setShowModal}) {
             error = true;
         }
         if(address === '') {
-            errorsObj.address = "Address field cannot be empty.";
+            errorsObj.address = "Street Address field cannot be empty.";
+            error = true;
+        } else if (address.length < 3 || address.length > 35) {
+            errorsObj.address = "Street Address must be greater than 3 characters and shorter than 35."
             error = true;
         }
         if(zipcode === '') {
@@ -57,6 +60,9 @@ function CreateBusinessPage({setShowModal}) {
             error = true;
         }
         if(!state) {
+            errorsObj.state = "Please select a State."
+            error = true;
+        } else if(state === 'Select') {
             errorsObj.state = "Please select a State."
             error = true;
         }
@@ -131,7 +137,7 @@ function CreateBusinessPage({setShowModal}) {
                 <label className="addbusiness-labels">State</label>
             </div>
             <select className="inputs" value={state} onChange={(e) => setState(e.target.value)}>
-              <option>Select State</option>
+              <option value="Select">Select State</option>
               <option value="AL">Alabama</option>
               <option value="AK">Alaska</option>
               <option value="AZ">Arizona</option>

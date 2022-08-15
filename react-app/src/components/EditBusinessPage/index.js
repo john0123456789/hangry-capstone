@@ -30,7 +30,10 @@ function EditBusinessPage({business, setShowModal}) {
         error = true;
         }
         if(address === '') {
-            errorsObj.address = "Address field cannot be empty.";
+            errorsObj.address = "Street Address field cannot be empty.";
+            error = true;
+        } else if (address.length < 3 || address.length > 35) {
+            errorsObj.address = "Street Address must be greater than 3 characters and shorter than 35."
             error = true;
         }
         if(zipcode === '') {
@@ -51,6 +54,9 @@ function EditBusinessPage({business, setShowModal}) {
             error = true;
         }
         if(!state) {
+            errorsObj.state = "Please select a State."
+            error = true;
+        } else if(state === "Select") {
             errorsObj.state = "Please select a State."
             error = true;
         }
@@ -122,7 +128,7 @@ function EditBusinessPage({business, setShowModal}) {
                 <label className="editbusiness-labels">State</label>
             </div>
             <select className="editinputs" value={state} onChange={(e) => setState(e.target.value)}>
-              <option>Select State</option>
+              <option value="Select">Select State</option>
               <option value="AL">Alabama</option>
               <option value="AK">Alaska</option>
               <option value="AZ">Arizona</option>
@@ -175,10 +181,10 @@ function EditBusinessPage({business, setShowModal}) {
               <option value="WI">Wisconsin</option>
               <option value="WY">Wyoming</option>
             </select>
-            <label classname="editbusinessrequire">*</label>
+            <label className="editbusinessrequire">*</label>
             <label className="editbusiness-labels">Phone Number</label>
             <input type="text" className="editinputs" placeholder="Phone Number i.e. 1234567891" value={phone_number} onChange={(e) => setPhoneNumber(e.target.value)}/>
-            <label classname="editbusinessrequire">*</label>
+            <label className="editbusinessrequire">*</label>
             <label className="editbusiness-labels">Website URL</label>
             <input type="text" className="editinputs" placeholder="Website URL i.e. https://abc.com" value={website} onChange={(e) => setWebsite(e.target.value)}/>
             <button type="submit" className="editbutton">Save Changes</button>
