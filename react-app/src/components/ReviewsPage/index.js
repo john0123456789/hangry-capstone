@@ -31,7 +31,7 @@ if (reviews.length === 0) {
             return (
                 <div key={review.id}>
                 <h2>Review by {review.user.username}:</h2>
-                <div>
+                <div className="star-container">
                     {review.rating === 5 && (
                         <label className="stars">&#9733; &#9733; &#9733; &#9733; &#9733;</label>
                     )}
@@ -47,11 +47,9 @@ if (reviews.length === 0) {
                     {review.rating === 1 && (
                          <label className="stars">&#9733;</label>
                     )}
-                    <div>
-                        {new Date(review.created_at).toLocaleDateString('en-US')}
-                    </div>
+                    <h3 className="review-date">{new Date(review.created_at).toLocaleDateString('en-US')}</h3>
                 </div>
-                <h2>{review.business_review}</h2>
+                <h2 className="review-date">{review.business_review}</h2>
                 {review.user.id === user.id ? (
                 <EditReviewModal business={business} review={review}/>): null }
                 </div>

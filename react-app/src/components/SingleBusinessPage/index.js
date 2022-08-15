@@ -31,7 +31,7 @@ function SingleBusinessPage() {
                 <h1>{business.name}</h1>
                     <>
                         <>
-                        <div class="business-container">
+                        <div>
                             <h2> {business.address}, {business.city}, {business.state} {business.zipcode} </h2>
                             <h2> {business.phone_number} </h2>
                             <h2> {business.website} </h2>
