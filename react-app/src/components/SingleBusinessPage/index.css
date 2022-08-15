@@ -1,3 +1,12 @@
+.singlebusiness-container {
+    display: block;
+    padding: 20px;
+    margin: auto;
+    width: 75%;
+    background-color: white;
+    margin-bottom: 50px;
+}
+
 .businesspagebuttons{
     background-color:#C2372F;
     border: none;
@@ -10,3 +19,32 @@
 .businesspagebuttons:hover{
     background-color:red;
 }
+
+.info-box {
+    width: 350px;
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(138, 138, 138);
+    position: fixed;
+    left: 65%;
+    bottom: 10%;
+}
+
+.info {
+    border: 0.5px solid rgba(160, 160, 160, 0.617);
+    padding: 10px;
+}
+
+.singlebusiness-header {
+    font-size: 40px;
+    border-bottom: 0.5px solid rgba(160, 160, 160, 0.617);
+    padding: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 5px;
+}
+
+.no-business {
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+

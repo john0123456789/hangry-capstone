@@ -1,11 +1,33 @@
 .stars {
     color: #C2372F;
     font-size: 2em;
-    margin-left: -10px;
 }
 
-.review-date {
+/* .review-date {
     font-weight: lighter;
     font-size: 15px;
     margin-left: 10px;
+} */
+
+.reviews-header {
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-bottom: 0.5px solid rgba(160, 160, 160, 0.617);
+    width: 40%;
+}
+
+.reviewer-header {
+    font-size: 18px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.review-container {
+    font-size: 16px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-bottom: 0.5px solid rgba(160, 160, 160, 0.617);
+    width: 40%;
+}
+
+.review-content {
+    font-weight:normal;
 }

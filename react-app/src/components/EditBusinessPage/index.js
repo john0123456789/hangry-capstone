@@ -101,24 +101,24 @@ function EditBusinessPage({business, setShowModal}) {
         <>
         <form className="editbusiness-form" onSubmit={handleBusinessUpdate}>
             <h1 className="editbusinesstitle">Edit your business!</h1>
-            <h3 classname="editbusinessrequire">* field required</h3>
+            <h3 className="editbusinessrequire">* field required</h3>
             <div className="editbusinesserrors">
                 {Object.values(reactErrors).map((error, idx) => <ul key={idx}>{error}</ul>)}
             </div>
-            <label classname="editbusinessrequire">*</label>
+            <label className="editbusinessrequire">*</label>
             <label className="editbusiness-labels">Business Name</label>
             <input type="text" className="editinputfirst" placeholder="Business Name" value={name} onChange={(e) => setName(e.target.value)}/>
-            <label classname="editbusinessrequire">*</label>
+            <label className="editbusinessrequire">*</label>
             <label className="editbusiness-labels">Street Address</label>
             <input type="text" className="editinputs" placeholder="Street Address i.e. 123 Apple St" value={address} onChange={(e) => setAddress(e.target.value)}/>
-            <label classname="editbusinessrequire">*</label>
+            <label className="editbusinessrequire">*</label>
             <label className="editbusiness-labels">Zipcode</label>
             <input type="text" className="editinputs" placeholder="Zipcode i.e. 12345" value={zipcode} onChange={(e) => setZipcode(e.target.value)}/>
-            <label classname="editbusinessrequire">*</label>
+            <label className="editbusinessrequire">*</label>
             <label className="editbusiness-labels">City</label>
             <input type="text" className="editinputs" placeholder="City" value={city} onChange={(e) => setCity(e.target.value)}/>
             <div>
-                <label classname="editbusinessrequire">*</label>
+                <label className="editbusinessrequire">*</label>
                 <label className="editbusiness-labels">State</label>
             </div>
             <select className="editinputs" value={state} onChange={(e) => setState(e.target.value)}>

@@ -9,7 +9,7 @@ def seed_businesses():
         city="Los Angeles",
         state="CA",
         phone_number="2139358399",
-        website="http://www.howlinrays.com",
+        website="https://www.howlinrays.com",
     )
     business2 = Business(
         user_id=2,

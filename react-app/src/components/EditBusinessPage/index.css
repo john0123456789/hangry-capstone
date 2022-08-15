@@ -95,3 +95,19 @@ body {
     font-family: Helvetica;
     font-size: 15px;
 }
+
+.editbusinessmodal-btn {
+    background-color:#C2372F;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    position: relative;
+    left: 85%;
+    bottom: 45px;
+}
+
+.editbusinessmodal-btn:hover {
+    background-color:red;
+}
