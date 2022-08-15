@@ -16,20 +16,32 @@
     left: 0px;
     bottom: 0px;
     right: 0px;
-    margin-top: 50px;
-
 }
 
 .feet {
+    font-family: Helvetica;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+.feet1 {
     cursor: pointer;
     font-family:helvetica;
     text-decoration:none;
     color:black;
     padding:10px;
     font-size:15px;
-    font-weight:lighter
+    font-weight:lighter;
 }
 
-.feet:hover {
+.feet1:hover {
     color: #C2372F;
+}
+
+.each-footer {
+    padding: 15px;
+    font-family: helvetica;
 }
