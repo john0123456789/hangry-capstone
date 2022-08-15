@@ -4,6 +4,9 @@ import { getAllBusinessesThunk } from '../../store/business';
 import EditBusinessModal from '../EditBusinessPage/EditBusinessModal'
 import ReviewsPage from "../ReviewsPage";
 import CreateReviewModal from "../CreateReviewPage/CreateReviewModal";
+import { BsTelephoneFill } from 'react-icons/bs';
+import { BsGlobe2 } from 'react-icons/bs';
+import { TbAddressBook } from 'react-icons/tb';
 import './index.css'
 
 
@@ -53,11 +56,11 @@ function SingleBusinessPage() {
         dispatch(getAllBusinessesThunk())
     }, [dispatch])
 
-    if (!business) {
-        return (
-            <h1 className="no-business">Oops! There is no business here!</h1>
-        );
-    } else {
+    // if (!business) {
+    //     return (
+    //         <h1 className="no-business">Oops! There is no business here!</h1>
+    //     );
+    // } else {
     return (
         <>
             <div className="singlebusiness-container">
@@ -87,9 +90,9 @@ function SingleBusinessPage() {
                                 <ReviewsPage business={business}/>
                             </div>
                             <div className="info-box">
-                                <div className="info"> {business.website} </div>
-                                <div className="info"> {business.phone_number} </div>
-                                <div className="info"> {business.address}, {business.city}, {business.state} {business.zipcode} </div>
+                                <div className="info"><BsGlobe2/> {business.website} </div>
+                                <div className="info"><BsTelephoneFill/> {business.phone_number} </div>
+                                <div className="info"><TbAddressBook/> {business.address}, {business.city}, {business.state} {business.zipcode} </div>
                             </div>
                             </div>
                         </>
@@ -98,5 +101,5 @@ function SingleBusinessPage() {
         </>
     )
   }
-}
+// }
 export default SingleBusinessPage;

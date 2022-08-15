@@ -5,6 +5,9 @@ import { NavLink } from "react-router-dom";
 import { clearReviews } from "../../store/review";
 import './index.css'
 import StarRating from "./StarRating";
+import { BsTelephoneFill } from 'react-icons/bs'
+import { BsGlobe2 } from 'react-icons/bs';
+import { TbAddressBook } from 'react-icons/tb';
 
 function BusinessesPage() {
     const dispatch = useDispatch();
@@ -28,9 +31,9 @@ return (
                             <div className="business-container" key={business.id}>
                             <NavLink className="name" to={`/business/${business.id}`}><b className="businesses-btag">{business.name}</b></NavLink>
                             <StarRating business={business}/>
-                            <h2 className="businesses-info">{business.address}, {business.city}, {business.state} {business.zipcode}</h2>
-                            <h2 className="businesses-info">{business.phone_number}</h2>
-                            <h2 className="businesses-info">{business.website}</h2>
+                            <h2 className="businesses-info"><TbAddressBook/> {business.address}, {business.city}, {business.state} {business.zipcode}</h2>
+                            <h2 className="businesses-info"><BsTelephoneFill/> {business.phone_number}</h2>
+                            <h2 className="businesses-info"><BsGlobe2/> {business.website}</h2>
                             </div>
                         </NavLink>
                     </div>
