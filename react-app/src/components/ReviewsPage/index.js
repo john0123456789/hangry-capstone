@@ -26,11 +26,13 @@ if (reviews.length === 0) {
     return (
         <>
     <div>
-        <h1>Reviews</h1>
+        <h1 className="reviews-header">Reviews</h1>
         { sortReviews.map(review => {
             return (
-                <div key={review.id}>
-                <h2>Review by {review.user.username}:</h2>
+                <div className="review-container" key={review.id}>
+                <h2 className="reviewer-header">{review.user.username}:</h2>
+                    {review.user.id === user.id ? (
+                    <EditReviewModal business={business} review={review}/>): null }
                 <div className="star-container">
                     {review.rating === 5 && (
                         <label className="stars">&#9733; &#9733; &#9733; &#9733; &#9733;</label>
@@ -47,11 +49,11 @@ if (reviews.length === 0) {
                     {review.rating === 1 && (
                          <label className="stars">&#9733;</label>
                     )}
-                    <h3 className="review-date">{new Date(review.created_at).toLocaleDateString('en-US')}</h3>
+                    {/* {new Date(review.created_at).toLocaleDateString('en-US')} */}
                 </div>
-                <h2 className="review-date">{review.business_review}</h2>
-                {review.user.id === user.id ? (
-                <EditReviewModal business={business} review={review}/>): null }
+                <div>
+                    <h3 className="review-content">{review.business_review}</h3>
+                </div>
                 </div>
             )
         })}

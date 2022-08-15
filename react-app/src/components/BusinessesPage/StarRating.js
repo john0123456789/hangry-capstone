@@ -39,6 +39,7 @@ function StarRating({business}) {
         starImg = "https://i.imgur.com/5MJPz2y.png"
     }
 
+
     useEffect(() => {
         dispatch(getReviewsThunk(business.id))
     }, [dispatch, rating])
