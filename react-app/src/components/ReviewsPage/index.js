@@ -49,7 +49,7 @@ if (reviews.length === 0) {
                     {review.rating === 1 && (
                          <label className="stars">&#9733;</label>
                     )}
-                    {/* {new Date(review.created_at).toLocaleDateString('en-US')} */}
+                    {new Date(review.created_at).toLocaleDateString('en-US')}
                 </div>
                 <div>
                     <h3 className="review-content">{review.business_review}</h3>
